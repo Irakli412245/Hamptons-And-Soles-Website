@@ -1,0 +1,32 @@
+import Title from "../UI/Title.tsx";
+import InfiniteGallery from "../UI/InfiniteGallery.tsx";
+
+const imagesReviews = [
+    "src/assets/images/home/reviews/review1.png",
+    "src/assets/images/home/reviews/review2.png",
+    "src/assets/images/home/reviews/review3.png",
+    "src/assets/images/home/reviews/review4.png",
+    "src/assets/images/home/reviews/review5.png",
+    "src/assets/images/home/reviews/review6.png",
+    "src/assets/images/home/reviews/review7.png",
+];
+
+const ReviewsSection = () => {
+    return (
+        <div className={'flex flex-col items-center py-[120px] bg-secondary-bg'}>
+            <div className={'flex items-center gap-20 w-full mb-[88px]'}>
+                <span className={'w-full h-[0.5px] bg-primary-cl'}></span>
+                <Title type={'h2'} className={''}>Reviews</Title>
+                <span className={'w-full h-[0.5px] bg-primary-cl'}></span>
+            </div>
+            <div className={'mb-[77px]'}>
+                <InfiniteGallery images={imagesReviews} duration={40} className={'h-[364px]'}/>
+            </div>
+            <p className={'text-center uppercase max-w-[530px]'}>
+                Seeing your tags brightens our day! Thank you for trusting us with your beloved luxury items
+            </p>
+        </div>
+    );
+};
+
+export default ReviewsSection;
