@@ -2,13 +2,13 @@ import Title from "../UI/Title.tsx";
 import InfiniteGallery from "../UI/InfiniteGallery.tsx";
 
 const imagesReviews = [
-    "../../assets/images/home/reviews/review1.png",
-    "../../assets/images/home/reviews/review2.png",
-    "../../assets/images/home/reviews/review3.png",
-    "../../assets/images/home/reviews/review4.png",
-    "../../assets/images/home/reviews/review5.png",
-    "../../assets/images/home/reviews/review6.png",
-    "../../assets/images/home/reviews/review7.png",
+    "/images/home/reviews/review1.png",
+    "/images/home/reviews/review2.png",
+    "/images/home/reviews/review3.png",
+    "/images/home/reviews/review4.png",
+    "/images/home/reviews/review5.png",
+    "/images/home/reviews/review6.png",
+    "/images/home/reviews/review7.png",
 ];
 
 const ReviewsSection = () => {

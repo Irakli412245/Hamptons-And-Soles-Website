@@ -1,8 +1,9 @@
+import {useEffect, useState} from "react";
+
 import Icon from "../UI/Icon.tsx";
 import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
 
-import mainBg from '../../assets/images/home/main-bg.png'
-import {useEffect, useState} from "react";
+import mainBg from '../../../public/images/home/main-bg.png'
 
 const CompanyLogo = () => {
     const {width} = useWindowDimensions()

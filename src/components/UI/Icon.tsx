@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import sprite from '../../assets/images/symbol-defs.svg';
+import sprite from '../../../public/images/symbol-defs.svg';
 
 interface IProps {
     id: string;
