@@ -211,7 +211,7 @@ const Header = () => {
                         )
                     )}
                 </ul>
-                <Button type={'button'} className={'text-[14px]'} onClick={handleChangeLanguage}>'EN|GE'</Button>
+                <Button type={'button'} className={'text-[14px]'} onClick={handleChangeLanguage}>EN|GE</Button>
             </div>
         </div>
     );
