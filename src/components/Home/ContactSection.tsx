@@ -7,7 +7,7 @@ const ContactSection = () => {
             <Title type={'h2'} className={'mb-[70px]'}>
                 Get in touch with us:
             </Title>
-            <ul className={'grid grid-cols-1 table:grid-cols-2 gap-[60px] justify-center text-[14px] mb-[77px]'}>
+            <ul className={'grid grid-cols-1 table:grid-cols-2 gap-[60px] items-center justify-center text-[14px] mb-[77px]'}>
                 <li className={'flex flex-col items-center gap-8 w-[300px]'}>
                     <p className={'block px-4 uppercase text-center'}>
                         Brothers Kakabadze 5,
