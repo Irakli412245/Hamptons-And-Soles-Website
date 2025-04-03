@@ -10,19 +10,19 @@ const brands = [
 ];
 
 const imagesGallery = [
-    "src/assets/images/home/gallery/gallery1.png",
-    "src/assets/images/home/gallery/gallery2.png",
-    "src/assets/images/home/gallery/gallery3.png",
-    "src/assets/images/home/gallery/gallery4.png",
-    "src/assets/images/home/gallery/gallery5.png",
-    "src/assets/images/home/gallery/gallery6.png",
+    "../../assets/images/home/gallery/gallery1.png",
+    "../../assets/images/home/gallery/gallery2.png",
+    "../../assets/images/home/gallery/gallery3.png",
+    "../../assets/images/home/gallery/gallery4.png",
+    "../../assets/images/home/gallery/gallery5.png",
+    "../../assets/images/home/gallery/gallery6.png",
 ];
 
 const galleryMobileImages = [
-    "src/assets/images/home/gallery/galleryMobile1.png",
-    "src/assets/images/home/gallery/galleryMobile2.png",
-    "src/assets/images/home/gallery/galleryMobile3.png",
-    "src/assets/images/home/gallery/galleryMobile4.png",
+    "../../assets/images/home/gallery/galleryMobile1.png",
+    "../../assets/images/home/gallery/galleryMobile2.png",
+    "../../assets/images/home/gallery/galleryMobile3.png",
+    "../../assets/images/home/gallery/galleryMobile4.png",
 ]
 
 const TrustStatement = () => {
