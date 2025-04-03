@@ -15,7 +15,7 @@ const InfiniteGallery: React.FC<IProps> = ({
     return (
         <div className="overflow-hidden w-full relative">
             <motion.div
-                className="flex gap-7"
+                className="flex gap-4 table:gap-7"
                 animate={{x: ["0%", "-100%"]}}
                 transition={{
                     repeat: Infinity,
@@ -23,7 +23,7 @@ const InfiniteGallery: React.FC<IProps> = ({
                     ease: "linear",
                 }}
             >
-                {/* Перший набір картинок */}
+
                 {images.map((src, index) => (
                     <img
                         key={`first-${index}`}
@@ -33,7 +33,6 @@ const InfiniteGallery: React.FC<IProps> = ({
                     />
                 ))}
 
-                {/* Дубльований набір для безшовності */}
                 {images.map((src, index) => (
                     <img
                         key={`second-${index}`}
