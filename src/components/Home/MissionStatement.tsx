@@ -37,7 +37,7 @@ const links = [
 const MissionStatement = () => {
     return (
         <section className="w-full flex flex-col items-center gap-[66px] py-[77px] table:py-[184px] mobile:px-10">
-            <Title type={'h2'} className={''}>
+            <Title type={'h2'} className={'max-w-[930px]'}>
                 Our mission is to provide customers with professional, aesthetically-driven restoration and delicate
                 cleaning of luxury shoes and handbags, paired with high-quality, comfortable service
             </Title>
