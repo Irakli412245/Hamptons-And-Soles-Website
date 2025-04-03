@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import sprite from '../../assets/images/symbol-defs.svg';
+
 interface IProps {
     id: string;
     width: number;
@@ -15,7 +17,7 @@ const Icon: React.FC<IProps> = ({id, color, height, width}) => {
             height={height}
             fill={color}
         >
-            <use href={`src/assets/images/symbol-defs.svg#icon-${id}`}/>
+            <use href={`${sprite}#icon-${id}`}/>
         </svg>
     );
 };
