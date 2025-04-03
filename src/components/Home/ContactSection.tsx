@@ -8,7 +8,7 @@ const ContactSection = () => {
                 Get in touch with us:
             </Title>
             <ul className={'grid grid-cols-1 table:grid-cols-2 gap-[60px] text-[14px] mb-[77px]'}>
-                <li className={'flex flex-col items-center gap-8 w-[270px]'}>
+                <li className={'flex flex-col items-center gap-8 w-[300px]'}>
                     <p className={'block px-4 uppercase text-center'}>
                         Brothers Kakabadze 5,
                         <br/>
@@ -21,7 +21,7 @@ const ContactSection = () => {
                         10:00 - 19:00
                     </p>
                 </li>
-                <li className={'flex flex-col items-center gap-8 w-[270px]'}>
+                <li className={'flex flex-col items-center gap-8 w-[300px]'}>
                     <p className={'uppercase text-center'}>
                         Axis Towers shopping center,
                         <br/>

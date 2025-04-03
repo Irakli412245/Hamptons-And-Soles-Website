@@ -53,6 +53,10 @@ const MobileMenu = () => {
             link: '/',
             title: 'Contacts'
         },
+        {
+            link: '/',
+            title: 'en|ge'
+        }
     ]
 
     const handleToggleMenu = () => {
@@ -65,7 +69,7 @@ const MobileMenu = () => {
 
     return (
         <div className={'flex flex-col w-full'}>
-            <div className={'flex items-center justify-between py-9 px-4 desktop:px-10'}>
+            <div className={'flex items-center justify-between py-6 px-4 desktop:px-10'}>
                 <Icon id={'logo-text'} width={182} height={13}/>
                 <Button
                     type="button"
@@ -91,7 +95,7 @@ const MobileMenu = () => {
                 initial={{height: 0, opacity: 0}}
                 animate={{height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0}}
                 transition={{duration: 0.3, ease: "easeInOut"}}
-                className="absolute top-[96px] z-40 w-full bg-primary-bg overflow-hidden"
+                className="absolute top-[72px] left-0 z-40 w-full bg-primary-bg overflow-hidden pb-6 px-4"
             >
                 {
                     links.map(el => (
@@ -99,12 +103,14 @@ const MobileMenu = () => {
                             {
                                 el.links ? (
                                     <Button type={'button'} className={''} onClick={handleToggleSubMenu}>
-                                        <p>{el.title}</p>
+                                        <p className={'text-[12px] uppercase'}>{el.title}</p>
                                         {isOpenSubMenu ? <IoIosArrowUp/> : <IoIosArrowDown/>}
                                     </Button>
                                 ) : (
                                     <Button type={'link'} className={''} link={el.link}>
-                                        {el.title}
+                                        <p className={'uppercase text-[12px]'}>
+                                            {el.title}
+                                        </p>
                                     </Button>
                                 )
                             }
@@ -125,7 +131,9 @@ const MobileMenu = () => {
                                                     link={subEl.link}
                                                 >
                                                     <p className={'w-1 h-1 bg-primary-cl rounded-full'}></p>
-                                                    {subEl.title}
+                                                    <p className={'uppercase text-[12px]'}>
+                                                        {subEl.title}
+                                                    </p>
                                                 </Button>
                                             </li>
                                         ))
@@ -178,14 +186,14 @@ const Header = () => {
     }
 
     return (
-        <div className={'flex items-center justify-between py-9 px-4 desktop:px-10'}>
+        <div className={'flex items-center justify-between py-7 px-4 desktop:px-10'}>
             <ul className={'flex gap-2 desktop:gap-[42px]'}>
                 {leftNav.map(el => (
                         <li key={el.title}>
                             <Button
                                 type={'link'}
                                 link={el.link}
-                                className={'uppercase'}
+                                className={'uppercase text-[14px]'}
                             >{el.title}</Button>
                         </li>
                     )
@@ -196,14 +204,14 @@ const Header = () => {
                 <ul className={'flex gap-2 desktop:gap-[42px]'}>
                     {rightNav.map(el => (
                             <li key={el.title}>
-                                <Button type={'link'} link={el.link} className={'uppercase'}>
+                                <Button type={'link'} link={el.link} className={'uppercase text-[14px]'}>
                                     {el.title}
                                 </Button>
                             </li>
                         )
                     )}
                 </ul>
-                <Button type={'button'} className={''} onClick={handleChangeLanguage}>'EN|GE'</Button>
+                <Button type={'button'} className={'text-[14px]'} onClick={handleChangeLanguage}>'EN|GE'</Button>
             </div>
         </div>
     );

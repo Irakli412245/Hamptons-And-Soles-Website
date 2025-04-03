@@ -33,7 +33,7 @@ const MobileFooterContent = () => {
                 </li>
             </ul>
             <Button type={'button'} className={''} onClick={handleTabScrollUp}>
-                <p className={'text-xl font-normal'}>Scroll to top</p>
+                <p className={'text-xl font-normal uppercase'}>Scroll to top</p>
                 <FaArrowUpLong/>
             </Button>
             <p className={'text-[12px] text-center'}>
@@ -68,12 +68,14 @@ const Footer = () => {
     }
 
     return (
-        <div className={'flex items-center justify-between py-8 px-10'}>
+        <div className={'flex items-center justify-between py-7 px-10'}>
             <ul className={'flex gap-[8px] md:gap-[20px] lg:gap-[42px]'}>
                 {leftNav.map(el => (
                         <li key={el.title}>
                             <Button type={'link'} link={el.link} className={''}>
-                                {el.title}
+                                <p className={'uppercase text-[14px]'}>
+                                    {el.title}
+                                </p>
                             </Button>
                         </li>
                     )

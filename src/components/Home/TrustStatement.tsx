@@ -19,18 +19,30 @@ const imagesGallery = [
 ];
 
 const galleryMobileImages = [
-    "/images/home/gallery/galleryMobile1.png",
-    "/images/home/gallery/galleryMobile2.png",
-    "/images/home/gallery/galleryMobile3.png",
-    "/images/home/gallery/galleryMobile4.png",
+    {
+        link: "/images/home/gallery/galleryMobile1.png",
+        side: 'fade-left',
+    },
+    {
+        link: "/images/home/gallery/galleryMobile2.png",
+        side: 'fade-right',
+    },
+    {
+        link: "/images/home/gallery/galleryMobile3.png",
+        side: 'fade-left',
+    },
+    {
+        link: "/images/home/gallery/galleryMobile4.png",
+        side: 'fade-right',
+    },
 ]
 
 const TrustStatement = () => {
-    const {width} = useWindowDimensions()
+    const {width} = useWindowDimensions();
 
     return (
-        <section className="w-full bg-secondary-bg pt-[176px] pb-[181px]">
-            <div className={'flex flex-col gap-12 items-center mb-[181px] mobile:px-10'}>
+        <section className="w-full bg-secondary-bg py-[80px] table:py-[176px]">
+            <div className={'flex flex-col gap-12 items-center mb-[80px] table:mb-[180px] mobile:px-10'}>
                 <div data-aos='fade-left'>
                     <Title type={'h2'} className={'max-w-[853px]'}>
                         Since 2017, we've had the honor of restoring and caring for over 7,000 of your beloved items
@@ -44,14 +56,16 @@ const TrustStatement = () => {
                 width > 426 ? (
                     <InfiniteGallery images={imagesGallery} duration={30} className={'h-[294px]'}/>
                 ) : (
-                    <div className={'grid grid-cols-2'}>
+                    <div className={'grid grid-cols-2 gap-2'}>
                         {galleryMobileImages.map(el => (
-                            <img
-                                key={el}
-                                src={el}
-                                alt={el}
-                                className={`object-cover flex-shrink-0`}
-                            />
+                            <div>
+                                <img
+                                    key={el.link}
+                                    src={el.link}
+                                    alt={el.link}
+                                    className={`object-cover flex-shrink-0`}
+                                />
+                            </div>
                         ))}
                     </div>
                 )
