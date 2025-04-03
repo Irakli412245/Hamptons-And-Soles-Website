@@ -13,16 +13,16 @@ const imagesReviews = [
 
 const ReviewsSection = () => {
     return (
-        <div className={'flex flex-col items-center py-[120px] bg-secondary-bg'}>
-            <div className={'flex items-center gap-20 w-full mb-[88px]'}>
+        <div className={'flex flex-col items-center py-[65px] table:py-[120px] bg-secondary-bg'}>
+            <div className={'flex items-center gap-8 table:gap-20 w-full mb-[50px] table:mb-[88px]'}>
                 <span className={'w-full h-[0.5px] bg-primary-cl'}></span>
                 <Title type={'h2'} className={''}>Reviews</Title>
                 <span className={'w-full h-[0.5px] bg-primary-cl'}></span>
             </div>
-            <div className={'mb-[77px]'}>
+            <div className={' mb-[50px] table:mb-[77px]'}>
                 <InfiniteGallery images={imagesReviews} duration={40} className={'h-[364px]'}/>
             </div>
-            <p className={'text-center uppercase max-w-[530px]'}>
+            <p className={'text-center uppercase max-w-[530px] mobile:px-14'}>
                 Seeing your tags brightens our day! Thank you for trusting us with your beloved luxury items
             </p>
         </div>

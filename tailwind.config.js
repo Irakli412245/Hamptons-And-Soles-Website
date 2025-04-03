@@ -21,6 +21,11 @@ export default {
         'primary-bg': '#330000',
         'secondary-bg': '#000000',
       },
+      screens: {
+        mobile: '375px',
+        table: '768px',
+        desktop: '1440px',
+      },
     },
   },
   plugins: [],

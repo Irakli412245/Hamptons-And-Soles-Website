@@ -2,12 +2,13 @@ import Title from "../UI/Title.tsx";
 
 const ContactSection = () => {
     return (
-        <div className={'flex flex-col py-[207px] bg-secondary-bg'}>
+        <div
+            className={'flex flex-col justify-center items-center py-[70px] table:py-[207px] mobile:px-[56px] bg-secondary-bg'}>
             <Title type={'h2'} className={'mb-[70px]'}>
                 Get in touch with us:
             </Title>
-            <ul className={'flex justify-center gap-[60px] text-[14px] mb-[77px]'}>
-                <li className={'flex flex-col items-center gap-10 w-[270px]'}>
+            <ul className={'grid grid-cols-1 table:grid-cols-2 gap-[60px] text-[14px] mb-[77px]'}>
+                <li className={'flex flex-col items-center gap-8 w-[270px]'}>
                     <p className={'block px-4 uppercase text-center'}>
                         Brothers Kakabadze 5,
                         <br/>
@@ -20,7 +21,7 @@ const ContactSection = () => {
                         10:00 - 19:00
                     </p>
                 </li>
-                <li className={'flex flex-col items-center gap-10 w-[270px]'}>
+                <li className={'flex flex-col items-center gap-8 w-[270px]'}>
                     <p className={'uppercase text-center'}>
                         Axis Towers shopping center,
                         <br/>

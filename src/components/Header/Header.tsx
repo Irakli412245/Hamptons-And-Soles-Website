@@ -1,5 +1,144 @@
+import {useState} from 'react';
+import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io";
+import {motion} from 'framer-motion';
+
 import Icon from "../UI/Icon.tsx";
 import Button from "../UI/Button.tsx";
+import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
+
+const MobileMenu = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isOpenSubMenu, setIsOpenSubMenu] = useState(false)
+
+    const links = [
+        {
+            link: '/',
+            title: 'Home'
+        },
+        {
+            link: '/',
+            title: 'About us'
+        },
+        {
+            link: '/',
+            title: 'Services',
+            links: [
+                {
+                    link: '/',
+                    title: 'delicate cleaning'
+                },
+                {
+                    link: '/',
+                    title: 'shoe restoration'
+                },
+                {
+                    link: '/',
+                    title: 'bag restoration'
+                },
+                {
+                    link: '/',
+                    title: 'Casali Sole Protectors'
+                },
+                {
+                    link: '/',
+                    title: 'Jacket Restoration'
+                },
+            ]
+        },
+        {
+            link: '/',
+            title: 'Products'
+        },
+        {
+            link: '/',
+            title: 'Contacts'
+        },
+    ]
+
+    const handleToggleMenu = () => {
+        setIsOpen(prev => !prev)
+    }
+
+    const handleToggleSubMenu = () => {
+        setIsOpenSubMenu(prev => !prev)
+    }
+
+    return (
+        <div className={'flex flex-col w-full'}>
+            <div className={'flex items-center justify-between py-9 px-4 desktop:px-10'}>
+                <Icon id={'logo-text'} width={182} height={13}/>
+                <Button
+                    type="button"
+                    onClick={handleToggleMenu}
+                    className="relative w-8 h-6 flex items-center justify-center"
+                >
+                    <motion.span
+                        initial={false}
+                        animate={{rotate: isOpen ? 45 : 0, y: isOpen ? 0 : -3}}
+                        transition={{duration: 0.3, ease: "easeInOut"}}
+                        className="absolute w-8 h-[0.5px] bg-primary-cl"
+                    />
+                    <motion.span
+                        initial={false}
+                        animate={{rotate: isOpen ? -45 : 0, y: isOpen ? 0 : 3}}
+                        transition={{duration: 0.3, ease: "easeInOut"}}
+                        className="absolute w-8 h-[0.5px] bg-primary-cl"
+                    />
+                </Button>
+
+            </div>
+            <motion.ul
+                initial={{height: 0, opacity: 0}}
+                animate={{height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0}}
+                transition={{duration: 0.3, ease: "easeInOut"}}
+                className="absolute top-[96px] z-40 w-full bg-primary-bg overflow-hidden"
+            >
+                {
+                    links.map(el => (
+                        <li>
+                            {
+                                el.links ? (
+                                    <Button type={'button'} className={''} onClick={handleToggleSubMenu}>
+                                        <p>{el.title}</p>
+                                        {isOpenSubMenu ? <IoIosArrowUp/> : <IoIosArrowDown/>}
+                                    </Button>
+                                ) : (
+                                    <Button type={'link'} className={''} link={el.link}>
+                                        {el.title}
+                                    </Button>
+                                )
+                            }
+
+                            {el.links && (
+                                <motion.ul
+                                    initial={{height: 0, opacity: 0}}
+                                    animate={{height: isOpenSubMenu ? "auto" : 0, opacity: isOpenSubMenu ? 1 : 0}}
+                                    transition={{duration: 0.3, ease: "easeInOut"}}
+                                    className="overflow-hidden"
+                                >
+                                    {
+                                        el.links.map(subEl => (
+                                            <li className={'pl-4'}>
+                                                <Button
+                                                    type={'link'}
+                                                    className={''}
+                                                    link={subEl.link}
+                                                >
+                                                    <p className={'w-1 h-1 bg-primary-cl rounded-full'}></p>
+                                                    {subEl.title}
+                                                </Button>
+                                            </li>
+                                        ))
+                                    }
+                                </motion.ul>
+                            )}
+                        </li>
+                    ))
+                }
+            </motion.ul>
+        </div>
+    );
+};
 
 const leftNav = [
     {
@@ -28,31 +167,43 @@ const rightNav = [
 ]
 
 const Header = () => {
+    const {width} = useWindowDimensions()
+
     const handleChangeLanguage = () => {
         console.log('change language')
     }
 
+    if (width < 1024) {
+        return <MobileMenu/>
+    }
+
     return (
-        <div className={'flex items-center justify-between py-8 px-10'}>
-            <ul className={'flex gap-[8px] md:gap-[20px] lg:gap-[42px]'}>
+        <div className={'flex items-center justify-between py-9 px-4 desktop:px-10'}>
+            <ul className={'flex gap-2 desktop:gap-[42px]'}>
                 {leftNav.map(el => (
                         <li key={el.title}>
-                            <Button type={'link'} title={el.title} link={el.link} className={'uppercase'}/>
+                            <Button
+                                type={'link'}
+                                link={el.link}
+                                className={'uppercase'}
+                            >{el.title}</Button>
                         </li>
                     )
                 )}
             </ul>
             <Icon id={'logo-text'} width={294} height={20}/>
-            <div className={'flex items-center gap-[8px] md:gap-[20px] lg:gap-[42px]'}>
-                <ul className={'flex gap-[8px] md:gap-[20px] lg:gap-[42px]'}>
+            <div className={'flex items-center gap-2 desktop:gap-[42px]'}>
+                <ul className={'flex gap-2 desktop:gap-[42px]'}>
                     {rightNav.map(el => (
                             <li key={el.title}>
-                                <Button type={'link'} title={el.title} link={el.link} className={'uppercase'}/>
+                                <Button type={'link'} link={el.link} className={'uppercase'}>
+                                    {el.title}
+                                </Button>
                             </li>
                         )
                     )}
                 </ul>
-                <Button type={'button'} title={'EN|GE'} className={''} onClick={handleChangeLanguage}/>
+                <Button type={'button'} className={''} onClick={handleChangeLanguage}>'EN|GE'</Button>
             </div>
         </div>
     );
