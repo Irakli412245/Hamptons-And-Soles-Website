@@ -16,7 +16,7 @@ const MobileMenu = () => {
             title: 'Home'
         },
         {
-            link: '/',
+            link: '/about',
             title: 'About us'
         },
         {
@@ -99,7 +99,7 @@ const MobileMenu = () => {
             >
                 {
                     links.map(el => (
-                        <li>
+                        <li key={el.title}>
                             {
                                 el.links ? (
                                     <Button type={'button'} className={''} onClick={handleToggleSubMenu}>
@@ -124,7 +124,7 @@ const MobileMenu = () => {
                                 >
                                     {
                                         el.links.map(subEl => (
-                                            <li className={'pl-4'}>
+                                            <li className={'pl-4'} key={subEl.title}>
                                                 <Button
                                                     type={'link'}
                                                     className={''}
