@@ -61,6 +61,8 @@ const MobileMenu = () => {
 
     const handleToggleMenu = () => {
         setIsOpen(prev => !prev)
+
+        if (isOpenSubMenu) setIsOpenSubMenu(false)
     }
 
     const handleToggleSubMenu = () => {
@@ -107,7 +109,7 @@ const MobileMenu = () => {
                                         {isOpenSubMenu ? <IoIosArrowUp/> : <IoIosArrowDown/>}
                                     </Button>
                                 ) : (
-                                    <Button type={'link'} className={''} link={el.link}>
+                                    <Button type={'link'} className={''} link={el.link} onClick={handleToggleMenu}>
                                         <p className={'uppercase text-[12px]'}>
                                             {el.title}
                                         </p>
@@ -126,6 +128,7 @@ const MobileMenu = () => {
                                         el.links.map(subEl => (
                                             <li className={'pl-4'} key={subEl.title}>
                                                 <Button
+                                                    onClick={handleToggleMenu}
                                                     type={'link'}
                                                     className={''}
                                                     link={subEl.link}

@@ -10,10 +10,18 @@ interface IProps {
 }
 
 const Button: React.FC<IProps> = ({type, className, link, onClick, children}) => {
+
+    const handleClick = () => {
+        if (onClick) {
+            onClick()
+        }
+    }
+
     switch (type) {
         case "link":
             return (
                 <Link
+                    onClick={handleClick}
                     to={link!}
                     className={`${className} flex items-center gap-2 p-2 hover:opacity-70`}
                 >
