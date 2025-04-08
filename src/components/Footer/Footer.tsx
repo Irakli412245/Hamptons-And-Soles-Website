@@ -1,49 +1,83 @@
-import {FaArrowUpLong} from "react-icons/fa6";
+import {useEffect, useRef, useState} from "react";
+import {IoIosArrowUp} from "react-icons/io";
 
 import Icon from "../UI/Icon.tsx";
 import Button from "../UI/Button.tsx";
 import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
 
+
 const MobileFooterContent = () => {
+    const footerRef = useRef<HTMLDivElement | null>(null);
+    const [showScrollButton, setShowScrollButton] = useState(false);
+
     const handleTabScrollUp = () => {
         window.scrollTo({
             top: 0,
             left: 0,
-            behavior: "smooth"
+            behavior: "smooth",
         });
     };
 
-    return (
-        <div className={'flex flex-col items-center justify-center gap-4 py-9'}>
-            <ul className={'flex justify-center gap-1 '}>
-                <li>
-                    <Button type={'link'} className={''} link={'/'}>
-                        <Icon id={'instagram'} width={32} height={32}/>
-                    </Button>
-                </li>
-                <li>
-                    <Button type={'link'} className={''} link={'/'}>
-                        <Icon id={'facebook'} width={32} height={32}/>
-                    </Button>
-                </li>
-                <li>
-                    <Button type={'link'} className={''} link={'/'}>
-                        <Icon id={'tiktok'} width={32} height={32}/>
-                    </Button>
-                </li>
-            </ul>
-            <Button type={'button'} className={''} onClick={handleTabScrollUp}>
-                <p className={'text-xl font-normal uppercase'}>Scroll to top</p>
-                <FaArrowUpLong/>
-            </Button>
-            <p className={'text-[12px] text-center'}>
-                Hamptons & Soles © 2024 ALL RIGHTS
-                RESERVED.
-            </p>
-        </div>
-    )
-}
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setShowScrollButton(entry.isIntersecting);
+            },
+            {
+                threshold: 0.1,
+            }
+        );
 
+        if (footerRef.current) {
+            observer.observe(footerRef.current);
+        }
+
+        return () => {
+            if (footerRef.current) {
+                observer.unobserve(footerRef.current);
+            }
+        };
+    }, []);
+
+    return (
+        <>
+            <div
+                ref={footerRef}
+                className={"flex flex-col items-center justify-center gap-4 py-9"}
+            >
+                <ul className={"flex justify-center gap-1"}>
+                    <li>
+                        <Button type={"link"} className={""} link={"/"}>
+                            <Icon id={"instagram"} width={32} height={32}/>
+                        </Button>
+                    </li>
+                    <li>
+                        <Button type={"link"} className={""} link={"/"}>
+                            <Icon id={"facebook"} width={32} height={32}/>
+                        </Button>
+                    </li>
+                    <li>
+                        <Button type={"link"} className={""} link={"/"}>
+                            <Icon id={"tiktok"} width={32} height={32}/>
+                        </Button>
+                    </li>
+                </ul>
+                <p className={"text-[12px] text-center"}>
+                    Hamptons & Soles © 2024 All rights reserved.
+                </p>
+            </div>
+
+            {showScrollButton && (
+                <button
+                    onClick={handleTabScrollUp}
+                    className="fixed bottom-20 right-6 z-50 flex justify-center items-center gap-2 rounded-full bg-black p-2 shadow-lg transition hover:scale-105"
+                >
+                    <IoIosArrowUp size={20}/>
+                </button>
+            )}
+        </>
+    );
+};
 
 const Footer = () => {
     const {width} = useWindowDimensions()
@@ -68,8 +102,8 @@ const Footer = () => {
     }
 
     return (
-        <div className={'flex items-center justify-between py-7 px-10'}>
-            <ul className={'flex gap-[8px] md:gap-[20px] lg:gap-[42px]'}>
+        <div className={'grid grid-cols-3 items-center py-7'}>
+            <ul className={'flex gap-8 justify-center'}>
                 {leftNav.map(el => (
                         <li key={el.title}>
                             <Button type={'link'} link={el.link} className={''}>
@@ -81,11 +115,14 @@ const Footer = () => {
                     )
                 )}
             </ul>
-            <Icon id={'logo-text'} width={294} height={20}/>
-            <div className={'flex max-w-96 items-center gap-[8px] md:gap-[20px] lg:gap-[42px]'}>
-                <p className={'text-[12px]'}>
-                    Hamptons & Soles © 2024 ALL RIGHTS
-                    RESERVED.
+            <div className={'flex justify-center'}>
+                <Icon id={'logo-text'} width={294} height={20}/>
+            </div>
+            <div className={'flex items-center justify-center gap-[6px]'}>
+                <p className={'text-[10px]'}>
+                    Hamptons & Soles
+                    <br/>
+                    © 2024 All rights reserved.
                 </p>
             </div>
         </div>
