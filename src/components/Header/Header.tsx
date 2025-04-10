@@ -36,7 +36,7 @@ const MobileMenu = () => {
                     title: 'bag restoration'
                 },
                 {
-                    link: '/',
+                    link: '/casali-sole-protectors',
                     title: 'Casali Sole Protectors'
                 },
                 {

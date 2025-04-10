@@ -1,7 +1,7 @@
 import {useWindowDimensions} from "../../../hooks/useWindowDimensions.tsx";
 
-import heroImage from '../../../../public/images/services/shoes/hero-image.png'
-import heroImageMobile from '../../../../public/images/services/shoes/hero-image-mobile.png'
+import heroImage from '../../../../public/images/services/casaliSoleProtectors/bg-hero.png'
+import heroImageMobile from '../../../../public/images/services/casaliSoleProtectors/bg-hero-mobile.png'
 
 const Hero = () => {
     const {width} = useWindowDimensions();
@@ -17,13 +17,13 @@ const Hero = () => {
         >
             <div className={'flex flex-col justify-center items-center gap-6'}>
                 <h2 className={'font-seasons font-normal text-[40px] table:text-[64px] leading-[150%] uppercase text-center'}>
-                    Shoes
+                    Casali Sole Protectors
                 </h2>
                 <span className={'block w-[100px] table:w-[140px] h-[0.5px] bg-primary-cl'}></span>
                 <p className={'font-light text-[13px] table:text-[14px] leading-[150%] tracking-[0.1em] uppercase text-center'}>
-                    Restore
+                    Luxury Soles for high fashion
                     <br/>
-                    the Beauty
+                    and elegant shoes
                 </p>
             </div>
         </div>
