@@ -238,7 +238,7 @@ const Header = () => {
                                 </Button>
                             )}
                             {isOpenSubMenu && (
-                                <ul className={'absolute left-0 flex flex-col gap-2 pl-4 bg-primary-bg'}>
+                                <ul className={'absolute left-0 z-100 flex flex-col gap-2 pl-4 bg-primary-bg'}>
                                     {el.sub?.map(subEl => (
                                         <li key={subEl.title} className={'min-w-[280px]'}>
                                             <Button
