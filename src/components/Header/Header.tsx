@@ -242,7 +242,7 @@ const Header = () => {
                                     initial={{height: 0, opacity: 0}}
                                     animate={{height: isOpenSubMenu ? "auto" : 0, opacity: isOpenSubMenu ? 1 : 0}}
                                     transition={{duration: 0.3, ease: "easeInOut"}}
-                                    className="absolute top-12 overflow-hidden bg-primary-bg"
+                                    className="absolute top-12 z-30 overflow-hidden bg-primary-bg"
                                 >
                                     {el.sub?.map(subEl => (
                                         <li key={subEl.title} className={'min-w-[280px]'}>
