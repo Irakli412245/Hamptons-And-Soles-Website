@@ -238,7 +238,12 @@ const Header = () => {
                                 </Button>
                             )}
                             {isOpenSubMenu && (
-                                <ul className={'absolute left-0 z-100 flex flex-col gap-2 pl-4 bg-primary-bg'}>
+                                <motion.ul
+                                    initial={{height: 0, opacity: 0}}
+                                    animate={{height: isOpenSubMenu ? "auto" : 0, opacity: isOpenSubMenu ? 1 : 0}}
+                                    transition={{duration: 0.3, ease: "easeInOut"}}
+                                    className="absolute top-12 overflow-hidden bg-primary-bg"
+                                >
                                     {el.sub?.map(subEl => (
                                         <li key={subEl.title} className={'min-w-[280px]'}>
                                             <Button
@@ -251,7 +256,7 @@ const Header = () => {
                                             </Button>
                                         </li>
                                     ))}
-                                </ul>
+                                </motion.ul>
                             )}
                         </li>
                     )
