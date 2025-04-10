@@ -162,7 +162,29 @@ const leftNav = [
     },
     {
         link: '/services',
-        title: 'Services'
+        title: 'Services',
+        sub: [
+            {
+                link: '/delicate-cleaning',
+                title: 'delicate cleaning'
+            },
+            {
+                link: '/shoes',
+                title: 'shoes restoration'
+            },
+            {
+                link: '/bag-restoration',
+                title: 'bag restoration'
+            },
+            {
+                link: '/casali-sole-protectors',
+                title: 'Casali Sole Protectors'
+            },
+            {
+                link: '/jacket-restoration',
+                title: 'Jacket Restoration'
+            },
+        ]
     },
 ]
 
@@ -178,10 +200,15 @@ const rightNav = [
 ]
 
 const Header = () => {
+    const [isOpenSubMenu, setIsOpenSubMenu] = useState(false)
     const {width} = useWindowDimensions()
 
     const handleChangeLanguage = () => {
         console.log('change language')
+    }
+
+    const handleClickSubMenu = () => {
+        setIsOpenSubMenu(prevState => !prevState)
     }
 
     if (width < 1024) {
@@ -192,12 +219,40 @@ const Header = () => {
         <div className={'flex items-center justify-between py-7 px-4 desktop:px-10'}>
             <ul className={'flex gap-2 desktop:gap-[42px]'}>
                 {leftNav.map(el => (
-                        <li key={el.title}>
-                            <Button
-                                type={'link'}
-                                link={el.link}
-                                className={'uppercase text-[14px]'}
-                            >{el.title}</Button>
+                        <li key={el.title} className={'relative'}>
+                            {el.sub ? (
+                                <Button
+                                    type={'button'}
+                                    onClick={handleClickSubMenu}
+                                    className={'uppercase text-[14px]'}
+                                >
+                                    {el.title}
+                                </Button>
+                            ) : (
+                                <Button
+                                    type={'link'}
+                                    link={el.link}
+                                    className={'uppercase text-[14px]'}
+                                >
+                                    {el.title}
+                                </Button>
+                            )}
+                            {isOpenSubMenu && (
+                                <ul className={'absolute left-0 flex flex-col gap-2 pl-4 bg-primary-bg'}>
+                                    {el.sub?.map(subEl => (
+                                        <li key={subEl.title} className={'min-w-[280px]'}>
+                                            <Button
+                                                type={'link'}
+                                                link={subEl.link}
+                                                onClick={handleClickSubMenu}
+                                                className={'uppercase text-[14px]'}
+                                            >
+                                                {subEl.title}
+                                            </Button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </li>
                     )
                 )}
