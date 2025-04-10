@@ -28,8 +28,8 @@ const MobileMenu = () => {
                     title: 'delicate cleaning'
                 },
                 {
-                    link: '/',
-                    title: 'shoe restoration'
+                    link: '/shoes',
+                    title: 'shoes restoration'
                 },
                 {
                     link: '/',

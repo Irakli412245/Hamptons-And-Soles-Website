@@ -7,12 +7,12 @@ import Advantages from "./Advantages.tsx";
 
 const About = () => {
     return (
-        <section className={'bg-secondary-bg'}>
+        <div className={'bg-secondary-bg'}>
             <Hero/>
             <AboutCompany/>
             <AboutUs/>
             <Advantages/>
-        </section>
+        </div>
     );
 };
 

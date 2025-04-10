@@ -7,12 +7,13 @@ interface IProps {
     width: number;
     height: number;
     color?: string;
+    className?: string;
 }
 
-const Icon: React.FC<IProps> = ({id, color, height, width}) => {
+const Icon: React.FC<IProps> = ({id, color, height, width, className}) => {
     return (
         <svg
-            className={`inline-block`}
+            className={`inline-block ${className}`}
             width={width}
             height={height}
             fill={color}

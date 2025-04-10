@@ -40,42 +40,40 @@ const MobileFooterContent = () => {
     }, []);
 
     return (
-        <>
-            <div
-                ref={footerRef}
-                className={"flex flex-col items-center justify-center gap-4 py-9"}
-            >
-                <ul className={"flex justify-center gap-1"}>
-                    <li>
-                        <Button type={"link"} className={""} link={"/"}>
-                            <Icon id={"instagram"} width={32} height={32}/>
-                        </Button>
-                    </li>
-                    <li>
-                        <Button type={"link"} className={""} link={"/"}>
-                            <Icon id={"facebook"} width={32} height={32}/>
-                        </Button>
-                    </li>
-                    <li>
-                        <Button type={"link"} className={""} link={"/"}>
-                            <Icon id={"tiktok"} width={32} height={32}/>
-                        </Button>
-                    </li>
-                </ul>
-                <p className={"text-[12px] text-center"}>
-                    Hamptons & Soles © 2024 All rights reserved.
-                </p>
-            </div>
+        <div
+            ref={footerRef}
+            className={"relative flex flex-col items-center justify-center gap-4 py-9"}
+        >
+            <ul className={"flex justify-center gap-1"}>
+                <li>
+                    <Button type={"link"} className={""} link={"/"}>
+                        <Icon id={"instagram"} width={32} height={32}/>
+                    </Button>
+                </li>
+                <li>
+                    <Button type={"link"} className={""} link={"/"}>
+                        <Icon id={"facebook"} width={32} height={32}/>
+                    </Button>
+                </li>
+                <li>
+                    <Button type={"link"} className={""} link={"/"}>
+                        <Icon id={"tiktok"} width={32} height={32}/>
+                    </Button>
+                </li>
+            </ul>
+            <p className={"text-[12px] text-center"}>
+                Hamptons & Soles © 2024 All rights reserved.
+            </p>
 
             {showScrollButton && (
                 <button
                     onClick={handleTabScrollUp}
-                    className="fixed bottom-20 right-6 z-50 flex justify-center items-center gap-2 rounded-full bg-black p-2 shadow-lg transition hover:scale-105"
+                    className="absolute top-6 right-6 z-50 flex justify-center items-center gap-2 rounded-full bg-black p-2 shadow-lg transition hover:scale-105"
                 >
                     <IoIosArrowUp size={20}/>
                 </button>
             )}
-        </>
+        </div>
     );
 };
 

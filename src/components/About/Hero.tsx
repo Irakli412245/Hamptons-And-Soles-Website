@@ -1,6 +1,7 @@
+import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
+
 import aboutHero from '../../../public/images/about/hero/about-hero.png'
 import aboutHeroMobile from '../../../public/images/about/hero/about-hero-mobile.png'
-import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
 
 const Hero = () => {
     const {width} = useWindowDimensions()
