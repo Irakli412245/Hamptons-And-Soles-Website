@@ -4,11 +4,12 @@ import {useWindowDimensions} from "../../../hooks/useWindowDimensions.tsx";
 import Card from "./components/Card.tsx";
 import CardText from "./components/CardText.tsx";
 
-interface IMobileCardProps {
+interface ICardProps {
     children: React.ReactNode;
     bgImageUrl: string;
     textLeft: string;
     textRight: string;
+    price?: string;
 }
 
 const BoxContainer: React.FC<{ children: React.ReactNode }> = ({children}) => {
@@ -19,7 +20,7 @@ const BoxContainer: React.FC<{ children: React.ReactNode }> = ({children}) => {
     );
 }
 
-const MobileCard: React.FC<IMobileCardProps> = ({children, bgImageUrl, textLeft, textRight}) => {
+const MobileCard: React.FC<ICardProps> = ({children, bgImageUrl, textLeft, textRight}) => {
     return (
         <div className={'border-[0.5px] border-primary-cl'}>
             <div
@@ -53,13 +54,13 @@ const MobileCard: React.FC<IMobileCardProps> = ({children, bgImageUrl, textLeft,
     );
 }
 
-const CardDesktop = () => {
+const CardDesktop: React.FC<ICardProps>  = ({children, bgImageUrl, textLeft, textRight, price}) => {
     return (
         <div>
             <div
                 className={'relative w-screen h-[400px] pt-10 px-20'}
                 style={{
-                    backgroundImage: `url('/images/services/shoes/bg-1.png')`,
+                    backgroundImage: `url(${bgImageUrl})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     filter: 'brightness(0.9)',
@@ -68,73 +69,22 @@ const CardDesktop = () => {
                 <ul className={'flex justify-between'}>
                     <li className={'max-w-[600px]'}>
                         <p className={'font-semibold text-[18px] leading-[140%] uppercase mb-8'}>
-                            / Leather Shoe Restoration Service
+                            {textLeft}
                         </p>
                         <p className={'font-semibold text-[18px] leading-[150%] uppercase'}>
                             <span className={'font-light text-[10px] leading-[150%] tracking-[0.1em] uppercase'}>Service Price:</span>
                             <br/>
-                            200-250 GEL
+                            {price} GEL
                         </p>
                     </li>
                     <li className={'max-w-[414px]'}>
                         <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em]'}>
-                            Our leather shoe restoration service is designed to bring new life to your cherished footwear
-                            while preserving the integrity of the leather.
+                            {textRight}
                         </p>
                     </li>
                 </ul>
             </div>
-            <div className={'relative flex-1 pt-[130px] px-20'}>
-                <p className={'max-w-[270px] font-light text-[13px] leading-[130%] tracking-[0.1em]'}>
-                    *per pair of shoes depending
-                    on the extent of the work required.
-                </p>
-                <ul className={'absolute top-[-80px] left-0 right-0 flex flex-1 gap-7 px-20'}>
-                    <BoxContainer>
-                        <>
-                            <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
-                                Service Includes:
-                            </p>
-                            <ul className={'list-disc pl-4'}>
-                                <li>
-                                    <CardText className={'!capitalize'}>
-                                        Delicate cleaning of the shoes, both inside and outside.
-                                    </CardText>
-                                </li>
-                                <li>
-                                    <CardText className={'!capitalize'}>
-                                        Dyeing and moisturizing of suede/nubuck to restore color and softness.
-                                    </CardText>
-                                </li>
-                            </ul>
-                        </>
-                    </BoxContainer>
-                    <BoxContainer>
-                        <>
-                            <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
-                                Service Does Not Include:
-                            </p>
-                            <ul className={'list-disc pl-4'}>
-                                <li>
-                                    <CardText className={'!capitalize'}>
-                                        Restoration or repairs to the soles.
-                                    </CardText>
-                                </li>
-                                <li>
-                                    <CardText className={'!capitalize'}>
-                                        Replacement of laces.
-                                    </CardText>
-                                </li>
-                                <li>
-                                    <CardText className={'!capitalize'}>
-                                        Restoration or repairs to the interior of the shoes.
-                                    </CardText>
-                                </li>
-                            </ul>
-                        </>
-                    </BoxContainer>
-                </ul>
-            </div>
+            {children}
         </div>
     )
 }
@@ -448,9 +398,338 @@ const ShoeRestorationServices = () => {
                 </div>
             ) : (
                 <div className={'flex flex-col gap-20'}>
-                    <CardDesktop/>
-                    <CardDesktop/>
-                    <CardDesktop/>
+                    <CardDesktop
+                    bgImageUrl={'/images/services/shoes/bg-1.png'}
+                    textLeft={'/ Leather Shoe Restoration Service'}
+                    textRight={'Our leather shoe restoration service is designed to bring new life to your cherished footwear while preserving the integrity of the leather.'}
+                    price={'200-250'}
+                    >
+                        <div className={'relative flex-1 pt-[130px] px-20'}>
+                            <p className={'max-w-[270px] font-light text-[13px] leading-[130%] tracking-[0.1em]'}>
+                                *per pair of shoes depending on the extent of the work required.
+                            </p>
+                            <ul className={'absolute top-[-80px] left-0 right-0 flex flex-1 gap-7 px-20'}>
+                                <BoxContainer>
+                                    <>
+                                        <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
+                                            Service Includes:
+                                        </p>
+                                        <ul className={'list-disc pl-4'}>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Delicate cleaning of the shoes, both inside and outside.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Dyeing and moisturizing of suede/nubuck to restore color and softness.
+                                                </CardText>
+                                            </li>
+                                        </ul>
+                                    </>
+                                </BoxContainer>
+                                <BoxContainer>
+                                    <>
+                                        <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
+                                            Service Does Not Include:
+                                        </p>
+                                        <ul className={'list-disc pl-4'}>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Restoration or repairs to the soles.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Replacement of laces.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Restoration or repairs to the interior of the shoes.
+                                                </CardText>
+                                            </li>
+                                        </ul>
+                                    </>
+                                </BoxContainer>
+                            </ul>
+                        </div>
+                    </CardDesktop>
+
+                    <CardDesktop
+                    bgImageUrl={'/images/services/shoes/bg-2.png'}
+                    textLeft={'/ Suede Restoration Service'}
+                    textRight={'Our leather shoe restoration service is designed to bring new life to your cherished footwear while preserving the integrity of the leather.'}
+                    price={'200-250'}
+                    >
+                        <div className={'relative flex-1 pt-[130px] px-20'}>
+                            <p className={'max-w-[270px] font-light text-[13px] leading-[130%] tracking-[0.1em]'}>
+                                *per pair of shoes depending on the extent of the work required.
+                            </p>
+                            <ul className={'absolute top-[-80px] left-0 right-0 flex flex-1 gap-7 px-20'}>
+                                <BoxContainer>
+                                    <>
+                                        <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
+                                            Service Includes:
+                                        </p>
+                                        <ul className={'list-disc pl-4'}>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Delicate cleaning of the shoes, both inside and outside.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Dyeing and moisturizing of suede/nubuck to restore color and softness.
+                                                </CardText>
+                                            </li>
+                                        </ul>
+                                    </>
+                                </BoxContainer>
+                                <BoxContainer>
+                                    <>
+                                        <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
+                                            Service Does Not Include:
+                                        </p>
+                                        <ul className={'list-disc pl-4'}>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Restoration or repairs to the soles.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Replacement of laces.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Restoration or repairs to the interior of the shoes.
+                                                </CardText>
+                                            </li>
+                                        </ul>
+                                    </>
+                                </BoxContainer>
+                            </ul>
+                        </div>
+                    </CardDesktop>
+
+                    <CardDesktop
+                    bgImageUrl={'/images/services/shoes/bg-3.png'}
+                    textLeft={'/ Metallic Leather Shoe Restoration Service'}
+                    textRight={'Our metallic leather shoe restoration service is crafted to renew the appearance of your shoes while protecting the delicate metallic finish.'}
+                    price={'300-350'}
+                    >
+                        <div className={'relative flex-1 pt-[130px] px-20'}>
+                            <p className={'max-w-[270px] font-light text-[13px] leading-[130%] tracking-[0.1em]'}>
+                                *per pair of shoes depending on the extent of the work required.
+                            </p>
+                            <ul className={'absolute top-[-80px] left-0 right-0 flex flex-1 gap-7 px-20'}>
+                                <BoxContainer>
+                                    <>
+                                        <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
+                                            Service Includes:
+                                        </p>
+                                        <ul className={'list-disc pl-4'}>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Delicate cleaning of the shoes, both inside and outside.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Restoration and moisturization of damaged areas on the leather surface to preserve the metallic sheen.
+                                                </CardText>
+                                            </li>
+                                        </ul>
+                                    </>
+                                </BoxContainer>
+                                <BoxContainer>
+                                    <>
+                                        <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
+                                            Service Does Not Include:
+                                        </p>
+                                        <ul className={'list-disc pl-4'}>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Restoration or repairs to the soles.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Replacement of laces.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Restoration or repairs to the interior of the shoes.
+                                                </CardText>
+                                            </li>
+                                        </ul>
+                                    </>
+                                </BoxContainer>
+                            </ul>
+                        </div>
+                    </CardDesktop>
+
+                    <CardDesktop
+                    bgImageUrl={'/images/services/shoes/bg-4.png'}
+                    textLeft={'/ Sneaker Repair & Restoration Service'}
+                    textRight={'Our sneaker repair service covers a wide range\n' +
+                        'of needs, from cleaning to extensive restoration. Whether you need basic repairs or a full refresh, we\'ve got your sneakers covered!'}
+                    price={'*'}
+                    >
+                        <div className={'relative flex-1 pt-[130px] px-20'}>
+                            <p className={'max-w-[270px] font-light text-[13px] leading-[130%] tracking-[0.1em]'}>
+                                *pricing varies based on the specific repairs and customization needed.
+                            </p>
+                            <ul className={'absolute top-[-80px] left-0 right-0 flex flex-1 gap-7 px-20'}>
+                                <BoxContainer>
+                                    <>
+                                        <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
+                                            Service May Include:
+                                        </p>
+                                        <ul className={'list-disc pl-4'}>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Deep Cleaning.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Surface Repairs.
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Inside heels repair
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Golden Goose Sole Repairs.
+                                                </CardText>
+                                            </li>
+                                        </ul>
+                                    </>
+                                </BoxContainer>
+                                <BoxContainer>
+                                    <>
+                                        <ul className={'list-disc pl-4'}>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Full Sole Replacement:
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Replace worn-out or damaged soles with new ones (depending on model and availability).
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Replacement of insoles
+                                                </CardText>
+                                            </li>
+                                            <li>
+                                                <CardText className={'!capitalize'}>
+                                                    Lace Replacement.
+                                                </CardText>
+                                            </li>
+                                        </ul>
+                                    </>
+                                </BoxContainer>
+                            </ul>
+                        </div>
+                    </CardDesktop>
+
+                    <CardDesktop
+                        bgImageUrl={'/images/services/shoes/bg-5.png'}
+                        textLeft={'/ Shoe Stretching Service'}
+                        textRight={''}
+                        price={'from 50'}
+                    >
+                        <div className={'relative flex-1 pt-[130px] px-20'}>
+                            <p className={'max-w-[270px] font-light text-[13px] leading-[130%] tracking-[0.1em]'}>
+                                *per pair of shoes.
+                            </p>
+                            <ul className={'absolute top-[-80px] left-0 right-0 flex flex-1 gap-7 px-20'}>
+                                <BoxContainer>
+                                    <CardText className={'!capitalize'}>
+                                        Our shoe stretching service is designed to provide a comfortable fit by
+                                        slightly increasing the length or width of your shoes without compromising
+                                        their structure.
+                                    </CardText>
+                                </BoxContainer>
+                                <BoxContainer>
+                                    <>
+                                        <p className={'font-light text-[14px] leading-[150%] tracking-[0.1em] uppercase'}>
+                                            Service Does Not Include:
+                                        </p>
+                                        <CardText className={'!capitalize'}>
+                                            Slight increase in length or width: Gentle stretching to accommodate more
+                                            room for your feet, perfect for tight-fitting shoes.
+                                        </CardText>
+                                    </>
+                                </BoxContainer>
+                            </ul>
+                        </div>
+                    </CardDesktop>
+
+                    <CardDesktop
+                        bgImageUrl={'/images/services/shoes/bg-6.png'}
+                        textLeft={'/ Patent Leather Heel Replacement'}
+                        textRight={''}
+                        price={'from 50'}
+                    >
+                        <div className={'relative flex-1 pt-[130px] px-20'}>
+                            <p className={'max-w-[270px] font-light text-[13px] leading-[130%] tracking-[0.1em]'}>
+                                *per pair of shoes.
+                            </p>
+                            <ul className={'absolute top-[-80px] left-0 right-0 flex flex-1 gap-7 px-20'}>
+                                <BoxContainer>
+                                    <CardText className={'!capitalize'}>
+                                        Our Patent Leather Heel Replacement service focuses on restoring shoes with worn
+                                        or damaged patent leather heels to their original elegance.
+                                    </CardText>
+                                </BoxContainer>
+                                <BoxContainer>
+                                    <CardText className={'!capitalize'}>
+                                        We meticulously replace the old leather with new, premium patent leather,
+                                        ensuring a flawless finish that matches the shoe’s original look.
+                                    </CardText>
+                                </BoxContainer>
+                            </ul>
+                        </div>
+                    </CardDesktop>
+
+                    <CardDesktop
+                        bgImageUrl={'/images/services/shoes/bg-7.png'}
+                        textLeft={'/ Golden Goose Sole Repair Service'}
+                        textRight={''}
+                        price={'from 250'}
+                    >
+                        <div className={'relative flex-1 pt-[130px] px-20'}>
+                            <p className={'max-w-[270px] font-light text-[13px] leading-[130%] tracking-[0.1em]'}>
+                                *per pair of shoes.
+                            </p>
+                            <ul className={'absolute top-[-80px] left-0 right-0 flex flex-1 gap-7 px-20'}>
+                                <BoxContainer>
+                                    <CardText className={'!capitalize'}>
+                                        Service includes: Restoration of Golden Goose soles and replacement of worn
+                                        soles with high-quality rubber full soles.
+                                    </CardText>
+                                </BoxContainer>
+                                <BoxContainer>
+                                    <CardText className={'!capitalize'}>
+                                        Service involves only resoling the shoes, without additional cleaning or
+                                        restoration.
+                                    </CardText>
+                                </BoxContainer>
+                            </ul>
+                        </div>
+                    </CardDesktop>
+
                 </div>
             )}
         </Card>
