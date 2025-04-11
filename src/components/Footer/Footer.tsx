@@ -116,7 +116,7 @@ const Footer = () => {
             <div className={'flex justify-center'}>
                 <Icon id={'logo-text'} width={294} height={20}/>
             </div>
-            <div className={'flex items-center justify-center gap-[6px]'}>
+            <div className={'flex items-center justify-end gap-[6px] pr-8'}>
                 <p className={'text-[10px]'}>
                     Hamptons & Soles
                     <br/>
