@@ -7,6 +7,7 @@ import ShoesPage from "../pages/Services/ShoesPage.tsx";
 import CasaliSoleProtectorsPage from "../pages/Services/CasaliSoleProtectorsPage.tsx";
 import BagPage from "../pages/Services/BagPage.tsx";
 import JacketPage from "../pages/Services/JacketPage.tsx";
+import DelicateCleaningPage from "../pages/Services/DelicateCleaningPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/jacket-restoration', element: <JacketPage/>
+            },
+            {
+                path: '/delicate-cleaning', element: <DelicateCleaningPage/>
             }
         ]
     },
