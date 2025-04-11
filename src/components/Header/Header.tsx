@@ -24,15 +24,15 @@ const MobileMenu = () => {
             title: 'Services',
             links: [
                 {
-                    link: '/',
+                    link: '/delicate-cleaning',
                     title: 'delicate cleaning'
                 },
                 {
-                    link: '/shoes',
+                    link: '/shoes-restoration',
                     title: 'shoes restoration'
                 },
                 {
-                    link: '/',
+                    link: '/bag-restoration',
                     title: 'bag restoration'
                 },
                 {
@@ -40,7 +40,7 @@ const MobileMenu = () => {
                     title: 'Casali Sole Protectors'
                 },
                 {
-                    link: '/',
+                    link: '/jacket-restoration',
                     title: 'Jacket Restoration'
                 },
             ]
@@ -169,7 +169,7 @@ const leftNav = [
                 title: 'delicate cleaning'
             },
             {
-                link: '/shoes',
+                link: '/shoes-restoration',
                 title: 'shoes restoration'
             },
             {
