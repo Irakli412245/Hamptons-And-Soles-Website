@@ -8,6 +8,7 @@ import CasaliSoleProtectorsPage from "../pages/Services/CasaliSoleProtectorsPage
 import BagPage from "../pages/Services/BagPage.tsx";
 import JacketPage from "../pages/Services/JacketPage.tsx";
 import DelicateCleaningPage from "../pages/Services/DelicateCleaningPage.tsx";
+import ErrorPage from "../pages/ErrorPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/delicate-cleaning', element: <DelicateCleaningPage/>
+            },
+            {
+                path: '*', element: <ErrorPage/>
             }
         ]
     },
