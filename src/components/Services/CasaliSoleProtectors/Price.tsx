@@ -12,7 +12,7 @@ interface IMobileCardProps {
 
 const MobileCard: React.FC<IMobileCardProps> = ({title, price, children, imageUrl}) => {
     return (
-            <div className={'flex flex-col table:flex-row border-[0.5px] border-primary-cl'}>
+            <div className={'flex flex-col w-full table:flex-row border-[0.5px] border-primary-cl'}>
                 <div
                     className={'flex-1 min-w-80 min-h-48 p-7 table:p-12 table:min-h-72'}
                     style={{
