@@ -1,5 +1,3 @@
-import heroImage from "../../../../../public/images/services/casaliSoleProtectors/bg-hero.png";
-import heroImageMobile from "../../../../../public/images/services/casaliSoleProtectors/bg-hero-mobile.png";
 import React from "react";
 
 interface IProps {
