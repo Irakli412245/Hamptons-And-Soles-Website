@@ -7,7 +7,7 @@ interface IProps {
 
 const Card: React.FC<IProps> = ({children, className}) => {
     return (
-        <div className={`px-7 py-7 ${className}`}>
+        <div className={`flex flex-col justify-center items-center px-7 py-7 ${className}`}>
             {children}
         </div>
     );
