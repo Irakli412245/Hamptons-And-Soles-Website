@@ -12,9 +12,9 @@ interface IMobileCardProps {
 
 const MobileCard: React.FC<IMobileCardProps> = ({title, price, children, imageUrl}) => {
     return (
-            <div className={'border-[0.5px] border-primary-cl'}>
+            <div className={'flex flex-col table:flex-row border-[0.5px] border-primary-cl'}>
                 <div
-                    className={'min-w-80 min-h-48 p-6'}
+                    className={'flex-1 min-w-80 min-h-48 p-7 table:p-12 table:min-h-72'}
                     style={{
                         backgroundImage: `url(${imageUrl})`,
                         backgroundSize: 'contain',
@@ -22,7 +22,7 @@ const MobileCard: React.FC<IMobileCardProps> = ({title, price, children, imageUr
                         filter: 'brightness(0.9)',
                     }}
                 >
-                    <ul className={'flex justify-between gap-8'}>
+                    <ul className={'flex justify-between gap-8 table:flex-col table:gap-7'}>
                         <li className={'min-w-40'}>
                             <CardText className={''} type={'uppercase'} >
                                 {title}
@@ -38,7 +38,7 @@ const MobileCard: React.FC<IMobileCardProps> = ({title, price, children, imageUr
                         </li>
                     </ul>
                 </div>
-                <div className={'flex flex-col gap-4 p-7'}>
+                <div className={'flex flex-1 flex-col gap-4 p-7 table:p-12'}>
                     {children}
                 </div>
             </div>

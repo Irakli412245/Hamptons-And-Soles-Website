@@ -7,7 +7,7 @@ interface IProps {
 const ImageContainer: React.FC<IProps> = ({imageUrl}) => {
     return (
         <div
-            className="flex justify-center items-center w-full h-[600px] table:h-[810px] bg-cover bg-center bg-no-repeat"
+            className="flex justify-center items-center w-full h-[400px] table:h-[410px] bg-cover bg-center bg-no-repeat"
             style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${imageUrl})`
             }}

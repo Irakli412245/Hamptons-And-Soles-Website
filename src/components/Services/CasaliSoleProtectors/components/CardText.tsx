@@ -17,14 +17,16 @@ const CardText: React.FC<IProps> = ({children, className, type}) => {
 
     if (type === 'uppercase') {
         return (
-            <p className={'font-semibold text-[13px] leading-[125%] uppercase'}>
+            <p className={'font-semibold text-[13px] leading-[125%] table:text-[18px] table:leading-[140%] uppercase'}>
                 {children}
             </p>
         )
     }
 
     return (
-        <p className={`font-light text-[13px] leading-[140%] tracking-[0.1em] ${className}`}>
+        <p
+            className={`font-light text-[13px] leading-[140%] tracking-[0.1em] table:text-[14px] table:leading-[150%] ${className}`}
+        >
             {children}
         </p>
     );
