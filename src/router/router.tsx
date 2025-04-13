@@ -9,7 +9,7 @@ import BagPage from "../pages/Services/BagPage.tsx";
 import JacketPage from "../pages/Services/JacketPage.tsx";
 import DelicateCleaningPage from "../pages/Services/DelicateCleaningPage.tsx";
 import ErrorPage from "../pages/ErrorPage.tsx";
-import {Products} from "../components/Product";
+import {ProductDetails, Products} from "../components/Product";
 
 const router = createBrowserRouter([
     {
@@ -41,8 +41,11 @@ const router = createBrowserRouter([
                 path: '/products', element: <Products/>
             },
             {
+                path: 'products/:id', element: <ProductDetails/>
+            },
+            {
                 path: '*', element: <ErrorPage/>
-            }
+            },
         ]
     },
 ]);
