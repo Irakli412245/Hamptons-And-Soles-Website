@@ -12,7 +12,7 @@ const Card: React.FC<IProps> = ({children, className, title, imageUrl, price}) =
     return (
         <div className={`flex flex-col table:flex-row w-full border-[0.5px] border-primary-cl ${className}`}>
             <div
-                className={'flex-1 min-w-80 table:min-w-[740px] min-h-44 p-7 table:p-12 table:min-h-[308px] border-b-[0.5px] table:border-b-0 table:border-r-[0.5px] border-primary-cl'}
+                className={'flex-1 min-w-full table:min-w-[740px] min-h-44 p-7 table:p-12 table:min-h-[308px] border-b-[0.5px] table:border-b-0 table:border-r-[0.5px] border-primary-cl'}
                 style={{
                     backgroundImage: `url(${imageUrl})`,
                     backgroundSize: 'cover',
