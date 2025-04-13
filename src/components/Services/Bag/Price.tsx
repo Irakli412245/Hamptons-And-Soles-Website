@@ -14,7 +14,7 @@ const MobileCard: React.FC<IMobileCardProps> = ({title, price, children, imageUr
     return (
             <div className={'flex flex-col w-full table:flex-row border-[0.5px] border-primary-cl'}>
                 <div
-                    className={'flex-1 min-w-80 min-h-48 p-7 table:p-12 table:min-h-72'}
+                    className={'flex-1 min-w-full min-h-48 p-7 table:p-12 table:min-h-72'}
                     style={{
                         backgroundImage: `url(${imageUrl})`,
                         backgroundSize: 'contain',
@@ -23,7 +23,7 @@ const MobileCard: React.FC<IMobileCardProps> = ({title, price, children, imageUr
                         filter: 'brightness(0.9)',
                     }}
                 >
-                    <ul className={'flex justify-between gap-8 table:flex-col table:gap-7'}>
+                    <ul className={'flex justify-between gap-2 table:flex-col table:gap-7'}>
                         <li className={'min-w-40'}>
                             <CardText className={''} type={'uppercase'} >
                                 {title}
