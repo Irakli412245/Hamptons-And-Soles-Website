@@ -14,7 +14,7 @@ const MobileCard: React.FC<IMobileCardProps> = ({title, price, children, imageUr
     return (
             <div className={'flex flex-col w-full table:flex-row border-[0.5px] border-primary-cl'}>
                 <div
-                    className={'flex-1 min-w-full min-h-48 p-7 table:p-12 table:min-h-72'}
+                    className={'flex-1 w-full table:w-auto min-h-48 p-7 table:p-12 table:min-h-72'}
                     style={{
                         backgroundImage: `url(${imageUrl})`,
                         backgroundSize: 'contain',

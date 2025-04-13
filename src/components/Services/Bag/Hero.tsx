@@ -17,7 +17,9 @@ const Hero = () => {
         >
             <div className={'flex flex-col justify-center items-center gap-6'}>
                 <h2 className={'font-seasons font-normal text-[40px] table:text-[64px] leading-[150%] uppercase text-center'}>
-                    Bag Restoration
+                    Bag
+                    {width <= 768 && <br/>}
+                    Restoration
                 </h2>
                 <span className={'block w-[100px] table:w-[140px] h-[0.5px] bg-primary-cl'}></span>
                 <p className={'font-light text-[13px] table:text-[14px] leading-[150%] tracking-[0.1em] uppercase text-center'}>

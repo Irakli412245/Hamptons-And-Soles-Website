@@ -24,7 +24,7 @@ const MobileCard: React.FC<ICardProps> = ({children, bgImageUrl, textLeft, textR
     return (
         <div className={'border-[0.5px] border-primary-cl'}>
             <div
-                className={'min-w-full min-h-48 py-6 px-4'}
+                className={'w-full min-h-48 py-6 px-4'}
                 style={{
                     backgroundImage: `url(${bgImageUrl})`,
                     backgroundSize: 'cover',
