@@ -24,7 +24,7 @@ const MobileCard: React.FC<ICardProps> = ({children, bgImageUrl, textLeft, textR
     return (
         <div className={'border-[0.5px] border-primary-cl'}>
             <div
-                className={'min-w-80 min-h-48 p-6'}
+                className={'min-w-full min-h-48 p-6'}
                 style={{
                     backgroundImage: `url(${bgImageUrl})`,
                     backgroundSize: 'cover',
@@ -32,7 +32,7 @@ const MobileCard: React.FC<ICardProps> = ({children, bgImageUrl, textLeft, textR
                     filter: 'brightness(0.9)',
                 }}
             >
-                <ul className={'flex justify-between gap-8 font-normal text-[12px] leading-[125%] uppercase'}>
+                <ul className={'flex justify-between gap-4 font-normal text-[12px] leading-[125%] uppercase'}>
                     <li className={'min-w-40'}>
                         <p className={''}>
                             {textLeft}
