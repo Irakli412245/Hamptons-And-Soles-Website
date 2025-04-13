@@ -12,6 +12,12 @@ const ProductDetails = () => {
     const productId = pathname.split('/').pop();
 
     useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        })
+
         if (productId) {
             const productFindFirst = productsData.find((item) => item.id === +productId);
             if (productFindFirst) {
