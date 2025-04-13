@@ -46,11 +46,11 @@ const MobileMenu = () => {
             ]
         },
         {
-            link: '/',
+            link: '/products',
             title: 'Products'
         },
         {
-            link: '/',
+            link: '/contacts',
             title: 'Contacts'
         },
         {

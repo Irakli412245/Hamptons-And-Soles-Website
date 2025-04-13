@@ -1,0 +1,42 @@
+import {IProduct} from "./ProductList.tsx";
+import React from "react";
+import Icon from "../../UI/Icon.tsx";
+import {useWindowDimensions} from "../../../hooks/useWindowDimensions.tsx";
+
+interface IProps {
+    product: IProduct;
+}
+
+const ProductItem: React.FC<IProps> = ({product}) => {
+    const {width} = useWindowDimensions()
+    const isMobile = width <= 768;
+    const iconSize = isMobile ? 20 : 30;
+
+    const handleAddProductToCart = () => {
+        console.log('Product added to cart:', product);
+    }
+
+    // todo add to cart functionality and remove demo text
+
+    return (
+        <div className={'relative border-[0.5px] border-primary-cl'}>
+            <p className={'absolute top-10 left-5 -rotate-45 font-light text-[12px] leading-[110%] uppercase'}>Demo</p>
+            <img alt={product.title} src={product.imageUrl}/>
+            <div className={'flex min-h-10 border-t-[0.5px] border-primary-cl'}>
+                <p
+                    className={'flex-1 p-2.5 font-light text-[9px] leading-[110%] table:font-medium table:text-[14px] table:leading-[130%] table:uppercase'}
+                >
+                    {product.title}
+                </p>
+                <button
+                    className={'flex justify-center items-center p-2.5 border-l-[0.5px] border-primary-cl '}
+                    onClick={handleAddProductToCart}
+                >
+                    <Icon id={'plus'} width={iconSize} height={iconSize}/>
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default ProductItem;

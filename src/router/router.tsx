@@ -9,6 +9,7 @@ import BagPage from "../pages/Services/BagPage.tsx";
 import JacketPage from "../pages/Services/JacketPage.tsx";
 import DelicateCleaningPage from "../pages/Services/DelicateCleaningPage.tsx";
 import ErrorPage from "../pages/ErrorPage.tsx";
+import {Products} from "../components/Product";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/delicate-cleaning', element: <DelicateCleaningPage/>
+            },
+            {
+                path: '/products', element: <Products/>
             },
             {
                 path: '*', element: <ErrorPage/>
