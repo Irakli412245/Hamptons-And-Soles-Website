@@ -1,4 +1,5 @@
-import React from "react";
+import React, { memo } from "react";
+import { useTranslation } from 'react-i18next';
 
 import Card from "./components/Card.tsx";
 import CardTitle from "./components/CardTitle.tsx";
@@ -11,7 +12,7 @@ interface IPropsCardContainer {
     order?: number;
 }
 
-const CardContainer: React.FC<IPropsCardContainer> = ({children, className, order}) => {
+const CardContainer: React.FC<IPropsCardContainer> = memo(({children, className, order}) => {
     return (
         <div className={`relative flex justify-center items-center table:max-w-[510px] table:h-[233px] p-12 border-[0.5px] border-primary-cl ${className}`}>
             <div className={'absolute top-[-15px] left-1/2 -translate-x-1/2 z-10 flex justify-center items-center w-[30px] h-[30px] border-[0.5px] border-primary-cl rounded-full bg-secondary-bg'}>
@@ -20,77 +21,71 @@ const CardContainer: React.FC<IPropsCardContainer> = ({children, className, orde
             {children}
         </div>
     )
-}
+});
 
-const LeatherBagCareInstructions = () => {
+const LeatherBagCareInstructions = memo(() => {
+    const { t } = useTranslation();
     const {width} = useWindowDimensions();
     const isMobile = width < 768;
+    
     return (
         <Card className={'gap-7 pb-[60px] table:pb-[100px]'}>
             <CardTitle className={'mb-[60px] table:mb-[70px]'}>
-                Leather
+                {t('bag.care.title.firstLine')}
                 {isMobile && <br/>}
-                Bag Care Instructions
+                {t('bag.care.title.secondLine')}
             </CardTitle>
             <div className={'flex flex-col gap-10 justify-center items-center table:flex-row table:flex-wrap'}>
                 <CardContainer
                     order={1}
                     className={''}
-
                 >
                     <CardText className={''} type={'normal'}>
-                        A leather bags should be cleaned 3-4 times a year to maintain its condition and extend its lifespan.
-                        When cleaning a leather bag, it’s important to <span className={'font-semibold'}>use only special leather cleaners</span>.
+                        {t('bag.care.point1.text')}
+                        <span className={'font-semibold'}>{t('bag.care.point1.bold')}</span>.
                     </CardText>
                 </CardContainer>
                 <CardContainer
                     order={2}
                     className={''}
-
                 >
                     <CardText className={''} type={'normal'}>
-                        <span className={'font-semibold'}>Avoid Harsh Chemicals:</span>
+                        <span className={'font-semibold'}>{t('bag.care.point2.title')}</span>
                         <br/>
-                        Do not use wet wipes, household cleaners or alcohol-based products.
+                        {t('bag.care.point2.text')}
                     </CardText>
                 </CardContainer>
                 <CardContainer
                     order={3}
                     className={''}
-
                 >
                     <CardText className={''} type={'normal'}>
-                        <span className={'font-semibold'}>Leather Conditioner:</span>
+                        <span className={'font-semibold'}>{t('bag.care.point3.title')}</span>
                         <br/>
-                        Apply a leather conditioner after cleaning to keep leather soft and prevent from drying out or
-                        cracking.
+                        {t('bag.care.point3.text')}
                     </CardText>
                 </CardContainer>
                 <CardContainer
                     order={4}
                     className={''}
-
                 >
                     <CardText className={''} type={'normal'}>
-                        <span className={'font-semibold'}>Protect from Water:</span>
+                        <span className={'font-semibold'}>{t('bag.care.point4.title')}</span>
                         <br/>
-                        Apply a leather protector or water-repellent spray designed for leather to shield the bag from
-                        rain and moisture.
+                        {t('bag.care.point4.text')}
                     </CardText>
                 </CardContainer>
                 <CardContainer
                     order={5}
                     className={''}
-
                 >
                     <CardText className={''} type={'normal'}>
-                        For deeper cleaning or stains that cannot be handled at home, take the bag to a professional
-                        leather cleaner who specializes in treating leather garments.
+                        {t('bag.care.point5')}
                     </CardText>
                 </CardContainer>
             </div>
         </Card>
     );
-};
+});
 
 export default LeatherBagCareInstructions;

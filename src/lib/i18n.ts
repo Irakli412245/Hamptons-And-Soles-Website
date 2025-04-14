@@ -74,6 +74,71 @@ const resources = {
           timeNeeded: "Please note that our restoration process requires time—typically 10-14 days—because it is both delicate and detailed.",
           commitment: "We carefully mix colors, select the right techniques, and address each scratch. If something doesn't meet our standards, we'll redo it until we achieve perfection. Quality takes time, and we are committed to delivering exceptional results."
         }
+      },
+      bag: {
+        heroTitle: {
+          firstLine: "Bag",
+          secondLine: "Restoration"
+        },
+        heroSubtitle: {
+          firstLine: "Luxury Bags, Lovingly Restored",
+          secondLine: "to Their Original Elegance"
+        },
+        servicePrice: "*Service Price:",
+        currency: "gel",
+        serviceIncludes: "Service includes:",
+        restoration: {
+          title: "/ Bag Restoration Service",
+          cleaning: {
+            title: "Delicate Cleaning:",
+            description: "We gently clean both the interior and exterior of your bag."
+          },
+          moisturization: {
+            title: "Restoration and Moisturization:",
+            description: "Our experts carefully repair any damage to the leather surface and apply moisturization to maintain the leather's softness and luster."
+          },
+          note: "Please note, interior restoration is not included in this service."
+        },
+        silicone: {
+          title: "/ Silicone Restoration on Bag Handles",
+          description: "Revitalize the handles of your luxury bags with our specialized Silicone Restoration Service. This service is tailored to restore the silicone on your bag handles, ensuring they look as good as new."
+        },
+        handles: {
+          title: "/  Making New Bag Handles",
+          priceFrom: "from 250",
+          description: "We specialize in crafting high-quality, custom handles that perfectly match your bag's style and materials.",
+          craftsmanship: {
+            title: "Custom Craftsmanship:",
+            description: "We will create new bag handles tailored to your specifications."
+          },
+          materials: {
+            title: "Material Matching:",
+            description: "We use premium materials that align with your bag's original design."
+          }
+        },
+        care: {
+          title: {
+            firstLine: "Leather",
+            secondLine: "Bag Care Instructions"
+          },
+          point1: {
+            text: "A leather bags should be cleaned 3-4 times a year to maintain its condition and extend its lifespan. When cleaning a leather bag, it's important to ",
+            bold: "use only special leather cleaners"
+          },
+          point2: {
+            title: "Avoid Harsh Chemicals:",
+            text: "Do not use wet wipes, household cleaners or alcohol-based products."
+          },
+          point3: {
+            title: "Leather Conditioner:",
+            text: "Apply a leather conditioner after cleaning to keep leather soft and prevent from drying out or cracking."
+          },
+          point4: {
+            title: "Protect from Water:",
+            text: "Apply a leather protector or water-repellent spray designed for leather to shield the bag from rain and moisture."
+          },
+          point5: "For deeper cleaning or stains that cannot be handled at home, take the bag to a professional leather cleaner who specializes in treating leather garments."
+        }
       }
     }
   },
@@ -146,6 +211,71 @@ const resources = {
           satisfaction: "თუ რაიმე მიზეზით ჩვენი მუშაობით უკმაყოფილო ხართ, ჩვენ გავაკეთებთ საჭირო კორექტირებებს თქვენი ნივთის დაზიანების გარეშე და არ შევწყვეტთ, სანამ სრულად არ გახდებით კმაყოფილი შედეგით. საბედნიეროდ, ასეთი შემთხვევები იშვიათია.",
           timeNeeded: "გთხოვთ გაითვალისწინოთ, რომ ჩვენი რესტავრაციის პროცესს სჭირდება დრო - როგორც წესი 10-14 დღე - რადგან ის არის როგორც დელიკატური, ასევე დეტალური.",
           commitment: "ჩვენ ყურადღებით ვურევთ ფერებს, ვირჩევთ სწორ ტექნიკას და ვაგვარებთ თითოეულ ნაკაწრს. თუ რამე არ შეესაბამება ჩვენს სტანდარტებს, ჩვენ გავაკეთებთ ხელახლა, სანამ სრულყოფილებას არ მივაღწევთ. ხარისხი დროს მოითხოვს და ჩვენ ვალდებულები ვართ უზრუნველვყოთ გამორჩეული შედეგები."
+        }
+      },
+      bag: {
+        heroTitle: {
+          firstLine: "ჩანთის",
+          secondLine: "რესტავრაცია"
+        },
+        heroSubtitle: {
+          firstLine: "ძვირფასი ჩანთები, სიყვარულით აღდგენილი",
+          secondLine: "მათ ორიგინალურ ელეგანტურობამდე"
+        },
+        servicePrice: "*სერვისის ფასი:",
+        currency: "gel",
+        serviceIncludes: "სერვისი მოიცავს:",
+        restoration: {
+          title: "/ ჩანთის რესტავრაცია",
+          cleaning: {
+            title: "ნაზი წმენდა:",
+            description: "ჩვენ ფრთხილად ვასუფთავებთ თქვენი ჩანთის როგორც შიგნით, ასევე გარეთა ნაწილს."
+          },
+          moisturization: {
+            title: "რესტავრაცია და დატენიანება:",
+            description: "ჩვენი ექსპერტები ფრთხილად აღადგენენ ტყავის ზედაპირის დაზიანებებს და იყენებენ დამატენიანებელს ტყავის სირბილისა და ბზინვარების შესანარჩუნებლად."
+          },
+          note: "გთხოვთ გაითვალისწინოთ, შიდა რესტავრაცია არ შედის ამ სერვისში."
+        },
+        silicone: {
+          title: "/ ჩანთის სახელურების სილიკონის რესტავრაცია",
+          description: "აღადგინეთ თქვენი ძვირფასი ჩანთების სახელურები ჩვენი სპეციალიზებული სილიკონის რესტავრაციის სერვისით. ეს სერვისი შექმნილია თქვენი ჩანთის სახელურებზე სილიკონის აღსადგენად, რათა ისინი ახალივით გამოიყურებოდეს."
+        },
+        handles: {
+          title: "/  ჩანთის ახალი სახელურების დამზადება",
+          priceFrom: "250-დან",
+          description: "ჩვენ ვსპეციალიზირდებით მაღალი ხარისხის, ინდივიდუალური სახელურების დამზადებაში, რომლებიც იდეალურად ერგება თქვენი ჩანთის სტილსა და მასალებს.",
+          craftsmanship: {
+            title: "ინდივიდუალური ხელოსნობა:",
+            description: "ჩვენ შევქმნით ახალ ჩანთის სახელურებს თქვენი სპეციფიკაციების მიხედვით."
+          },
+          materials: {
+            title: "მასალების შესაბამისობა:",
+            description: "ჩვენ ვიყენებთ პრემიუმ მასალებს, რომლებიც შეესაბამება თქვენი ჩანთის ორიგინალურ დიზაინს."
+          }
+        },
+        care: {
+          title: {
+            firstLine: "ტყავის",
+            secondLine: "ჩანთის მოვლის ინსტრუქციები"
+          },
+          point1: {
+            text: "ტყავის ჩანთა უნდა გაიწმინდოს წელიწადში 3-4-ჯერ, რათა შენარჩუნდეს მისი მდგომარეობა და გახანგრძლივდეს მისი სიცოცხლე. ტყავის ჩანთის გაწმენდისას მნიშვნელოვანია ",
+            bold: "გამოიყენოთ მხოლოდ სპეციალური ტყავის საწმენდები"
+          },
+          point2: {
+            title: "მოერიდეთ მკვეთრ ქიმიკატებს:",
+            text: "არ გამოიყენოთ სველი ხელსახოცები, საყოფაცხოვრებო საწმენდები ან ალკოჰოლის შემცველი პროდუქტები."
+          },
+          point3: {
+            title: "ტყავის კონდიციონერი:",
+            text: "გაწმენდის შემდეგ გამოიყენეთ ტყავის კონდიციონერი ტყავის სირბილის შესანარჩუნებლად და გამოშრობის ან გაბზარვის თავიდან ასაცილებლად."
+          },
+          point4: {
+            title: "დაიცავით წყლისგან:",
+            text: "გამოიყენეთ ტყავის დამცავი ან წყალგამძლე სპრეი, რომელიც შექმნილია ტყავისთვის, რათა დაიცვათ ჩანთა წვიმისა და სინოტივისგან."
+          },
+          point5: "უფრო ღრმა გაწმენდის ან ლაქების შემთხვევაში, რომლებიც ვერ მოგვარდება სახლში, მიიტანეთ ჩანთა პროფესიონალ ტყავის მწმენდავთან, რომელიც სპეციალიზირებულია ტყავის ნაწარმის დამუშავებაში."
         }
       }
     }
