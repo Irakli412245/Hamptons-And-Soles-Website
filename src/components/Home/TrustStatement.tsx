@@ -58,7 +58,7 @@ const TrustStatement = () => {
                 ) : (
                     <div className={'grid grid-cols-2 gap-2'}>
                         {galleryMobileImages.map(el => (
-                            <div>
+                            <div key={el.link}>
                                 <img
                                     key={el.link}
                                     src={el.link}
