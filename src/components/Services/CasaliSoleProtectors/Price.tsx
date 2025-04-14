@@ -1,113 +1,106 @@
-import React from "react";
+import React, { memo } from "react";
+import { useTranslation } from 'react-i18next';
 
 import Card from "./components/Card.tsx";
 import CardText from "./components/CardText.tsx";
 
 interface IMobileCardProps {
-    title: string;
+    titleKey: string;
     price: string;
     imageUrl: string;
     children: React.ReactNode;
 }
 
-const MobileCard: React.FC<IMobileCardProps> = ({title, price, children, imageUrl}) => {
+const MobileCard: React.FC<IMobileCardProps> = memo(({titleKey, price, children, imageUrl}) => {
+    const { t } = useTranslation();
+    
     return (
-            <div className={'flex flex-col w-full table:flex-row border-[0.5px] border-primary-cl'}>
-                <div
-                    className={'flex-1 w-full table:w-auto min-h-48 p-7 table:p-12 table:min-h-72'}
-                    style={{
-                        backgroundImage: `url(${imageUrl})`,
-                        backgroundSize: 'contain',
-                        backgroundPosition: 'center',
-                        filter: 'brightness(0.9)',
-                    }}
-                >
-                    <ul className={'flex justify-between gap-8 table:flex-col table:gap-7'}>
-                        <li className={'min-w-40'}>
-                            <CardText className={''} type={'uppercase'} >
-                                {title}
-                            </CardText>
-                        </li>
-                        <li className={'min-w-[100px]'}>
-                            <CardText className={''} type={'accent-uppercase'}>
-                                *Service Price:
-                            </CardText>
-                            <CardText className={''} type={'uppercase'}>
-                                {price} gel
-                            </CardText>
-                        </li>
-                    </ul>
-                </div>
-                <div className={'flex flex-1 flex-col gap-4 p-7 table:p-12'}>
-                    {children}
-                </div>
+        <div className={'flex flex-col w-full table:flex-row border-[0.5px] border-primary-cl'}>
+            <div
+                className={'flex-1 w-full table:w-auto min-h-48 p-7 table:p-12 table:min-h-72'}
+                style={{
+                    backgroundImage: `url(${imageUrl})`,
+                    backgroundSize: 'contain',
+                    backgroundPosition: 'center',
+                    filter: 'brightness(0.9)',
+                }}
+            >
+                <ul className={'flex justify-between gap-8 table:flex-col table:gap-7'}>
+                    <li className={'min-w-40'}>
+                        <CardText className={''} type={'uppercase'} >
+                            {t(titleKey)}
+                        </CardText>
+                    </li>
+                    <li className={'min-w-[100px]'}>
+                        <CardText className={''} type={'accent-uppercase'}>
+                            {t('casali.servicePrice')}
+                        </CardText>
+                        <CardText className={''} type={'uppercase'}>
+                            {price} {t('casali.currency')}
+                        </CardText>
+                    </li>
+                </ul>
             </div>
+            <div className={'flex flex-1 flex-col gap-4 p-7 table:p-12'}>
+                {children}
+            </div>
+        </div>
     )
-}
+});
 
-const Price = () => {
+const Price = memo(() => {
+    const { t } = useTranslation();
+    
     return (
         <Card className={'gap-7 pt-[60px]'}>
             <MobileCard
-            title={'/ Sole Protector Casali Mirror'}
-            price={'100-120'}
-            imageUrl={'/images/services/casaliSoleProtectors/bg-price-mobile-1.png'}
+                titleKey={'casali.mirror.title'}
+                price={'100-120'}
+                imageUrl={'/images/services/casaliSoleProtectors/bg-price-mobile-1.png'}
             >
                <>
                    <CardText type={'normal'} className={''}>
-                       Our Sole Binding Service includes the application of the Casali Mirror Sole Protector — a premium,
-                       high-gloss protective sole (excluding the heel) that is specifically designed to preserve the
-                       appearance and integrity of luxury shoes.
+                       {t('casali.mirror.description1')}
                    </CardText>
                    <CardText type={'normal'} className={''}>
-                       You can choose from 15 different colors of protective soles, carefully matched to the original
-                       colors of luxury designer shoe soles, ensuring your footwear retains its elegance while being
-                       fully protected.
+                       {t('casali.mirror.description2')}
                    </CardText>
                </>
             </MobileCard>
             <MobileCard
-                title={'/ Sole Protector Casali Silk'}
+                titleKey={'casali.silk.title'}
                 price={'100-120'}
                 imageUrl={'/images/services/casaliSoleProtectors/bg-price-mobile-2.png'}
             >
                 <>
                     <CardText type={'normal'} className={''}>
-                        Our Sole Binding Service includes the application of the Casali Silk Sole Protector—a premium,
-                        high-quality sole (excluding the heel) specifically designed to preserve both the appearance and
-                        structural integrity of luxury shoes.
+                        {t('casali.silk.description1')}
                     </CardText>
                     <CardText type={'normal'} className={''}>
-                        You can choose from 12 different colors of protective soles, carefully matched to the original
-                        colors of luxury designer shoe soles, ensuring your footwear retains its elegance while being
-                        fully protected.
+                        {t('casali.silk.description2')}
                     </CardText>
                 </>
             </MobileCard>
             <MobileCard
-                title={'/ Sole Protector Casali Ballerina'}
+                titleKey={'casali.ballerina.title'}
                 price={'80-100'}
                 imageUrl={'/images/services/casaliSoleProtectors/bg-price-mobile-3.png'}
             >
                 <CardText type={'normal'} className={''}>
-                    Our Sole Binding Service includes the application of the Casali Silk Sole Protector—a premium,
-                    high-quality sole (excluding the heel) specifically designed to preserve both the appearance
-                    and structural integrity of luxury shoes.
+                    {t('casali.ballerina.description')}
                 </CardText>
             </MobileCard>
             <MobileCard
-                title={'/ Heel Restoration Service'}
+                titleKey={'casali.heel.title'}
                 price={'80-100'}
                 imageUrl={'/images/services/casaliSoleProtectors/bg-price-mobile-4.png'}
             >
                 <CardText type={'normal'} className={''}>
-                    Our Heel Restoration Service focuses on binding the sole on the heel just like the original
-                    design. This service ensures that your luxury shoes maintain their aesthetic appeal while
-                    receiving the necessary repairs to keep them in top condition.
+                    {t('casali.heel.description')}
                 </CardText>
             </MobileCard>
         </Card>
     );
-};
+});
 
 export default Price;

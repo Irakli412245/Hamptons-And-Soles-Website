@@ -139,6 +139,52 @@ const resources = {
           },
           point5: "For deeper cleaning or stains that cannot be handled at home, take the bag to a professional leather cleaner who specializes in treating leather garments."
         }
+      },
+      casali: {
+        heroTitle: "Casali Sole Protectors",
+        heroSubtitle: {
+          firstLine: "Luxury Soles for high fashion",
+          secondLine: "and elegant shoes"
+        },
+        servicePrice: "*Service Price:",
+        currency: "gel",
+        mirror: {
+          title: "/ Sole Protector Casali Mirror",
+          description1: "Our Sole Binding Service includes the application of the Casali Mirror Sole Protector — a premium, high-gloss protective sole (excluding the heel) that is specifically designed to preserve the appearance and integrity of luxury shoes.",
+          description2: "You can choose from 15 different colors of protective soles, carefully matched to the original colors of luxury designer shoe soles, ensuring your footwear retains its elegance while being fully protected."
+        },
+        silk: {
+          title: "/ Sole Protector Casali Silk",
+          description1: "Our Sole Binding Service includes the application of the Casali Silk Sole Protector—a premium, high-quality sole (excluding the heel) specifically designed to preserve both the appearance and structural integrity of luxury shoes.",
+          description2: "You can choose from 12 different colors of protective soles, carefully matched to the original colors of luxury designer shoe soles, ensuring your footwear retains its elegance while being fully protected."
+        },
+        ballerina: {
+          title: "/ Sole Protector Casali Ballerina",
+          description: "Our Sole Binding Service includes the application of the Casali Silk Sole Protector—a premium, high-quality sole (excluding the heel) specifically designed to preserve both the appearance and structural integrity of luxury shoes."
+        },
+        heel: {
+          title: "/ Heel Restoration Service",
+          description: "Our Heel Restoration Service focuses on binding the sole on the heel just like the original design. This service ensures that your luxury shoes maintain their aesthetic appeal while receiving the necessary repairs to keep them in top condition."
+        },
+        benefits: {
+          title: "Why Choose Casali Soles for Your Luxury Shoes?",
+          colorMatch: {
+            title: "Perfect Color Match",
+            description: "One of the standout features of Casali soles is their wide variety of colors, designed to match the original sole color of luxury shoes. Unlike many generic sole protectors, Casali soles are made specifically to blend seamlessly with designer shoe brands. The color-matching capability ensures that the beauty of your luxury shoes is not compromised, but enhanced."
+          },
+          elegance: {
+            title: "Elegance with Functionality",
+            description: "Casali soles are not only protective but also aesthetically pleasing. Their sleek, mirror or silk-like finish enhances the shoe's appearance while providing superior durability. With these soles, you can keep your shoes looking pristine without sacrificing style."
+          },
+          customization: {
+            title: "Customization and Precision",
+            description: "At Hamptons & Soles, we take pride in tailoring each Casali sole to your specific shoe. Our craftsmen ensure that the color, fit, and style are a perfect match for your shoes, making the protective sole nearly invisible while adding extra wear protection."
+          },
+          highEnd: {
+            title: "Perfect for High-End Shoes",
+            description: "Casali soles are trusted by luxury shoe owners worldwide because they are designed to meet the high standards of top designer brands. Whether you own Louboutins, Jimmy Choos, Chanel, Hermes or Valentino shoes, Casali soles preserve the elegance and original craftsmanship of your footwear."
+          }
+        }
       }
     }
   },
@@ -276,6 +322,52 @@ const resources = {
             text: "გამოიყენეთ ტყავის დამცავი ან წყალგამძლე სპრეი, რომელიც შექმნილია ტყავისთვის, რათა დაიცვათ ჩანთა წვიმისა და სინოტივისგან."
           },
           point5: "უფრო ღრმა გაწმენდის ან ლაქების შემთხვევაში, რომლებიც ვერ მოგვარდება სახლში, მიიტანეთ ჩანთა პროფესიონალ ტყავის მწმენდავთან, რომელიც სპეციალიზირებულია ტყავის ნაწარმის დამუშავებაში."
+        }
+      },
+      casali: {
+        heroTitle: "კასალის ძირის დამცავები",
+        heroSubtitle: {
+          firstLine: "ლუქსური ძირები მაღალი მოდის",
+          secondLine: "და ელეგანტური ფეხსაცმლისთვის"
+        },
+        servicePrice: "*სერვისის ფასი:",
+        currency: "ლარი",
+        mirror: {
+          title: "/ კასალის სარკისებრი ძირის დამცავი",
+          description1: "ჩვენი ძირის დამაგრების სერვისი მოიცავს კასალის სარკისებრი ძირის დამცავის გამოყენებას — პრემიუმ კლასის, მაღალი ბზინვარების მქონე დამცავი ძირი (ქუსლის გარდა), რომელიც სპეციალურად შექმნილია ლუქსური ფეხსაცმლის გარეგნული იერის და მთლიანობის შესანარჩუნებლად.",
+          description2: "თქვენ შეგიძლიათ აირჩიოთ დამცავი ძირების 15 სხვადასხვა ფერიდან, რომლებიც ზუსტად შეესაბამება ლუქსური დიზაინერული ფეხსაცმლის ორიგინალურ ფერებს, რაც უზრუნველყოფს, რომ თქვენი ფეხსაცმელი ინარჩუნებს ელეგანტურობას სრული დაცვის პირობებში."
+        },
+        silk: {
+          title: "/ კასალის აბრეშუმისებრი ძირის დამცავი",
+          description1: "ჩვენი ძირის დამაგრების სერვისი მოიცავს კასალის აბრეშუმისებრი ძირის დამცავის გამოყენებას — პრემიუმ კლასის, მაღალი ხარისხის ძირი (ქუსლის გარდა), რომელიც სპეციალურად შექმნილია ლუქსური ფეხსაცმლის როგორც გარეგნული იერის, ასევე სტრუქტურული მთლიანობის შესანარჩუნებლად.",
+          description2: "თქვენ შეგიძლიათ აირჩიოთ დამცავი ძირების 12 სხვადასხვა ფერიდან, რომლებიც ზუსტად შეესაბამება ლუქსური დიზაინერული ფეხსაცმლის ორიგინალურ ფერებს, რაც უზრუნველყოფს, რომ თქვენი ფეხსაცმელი ინარჩუნებს ელეგანტურობას სრული დაცვის პირობებში."
+        },
+        ballerina: {
+          title: "/ კასალის ბალერინას ძირის დამცავი",
+          description: "ჩვენი ძირის დამაგრების სერვისი მოიცავს კასალის აბრეშუმისებრი ძირის დამცავის გამოყენებას — პრემიუმ კლასის, მაღალი ხარისხის ძირი (ქუსლის გარდა), რომელიც სპეციალურად შექმნილია ლუქსური ფეხსაცმლის როგორც გარეგნული იერის, ასევე სტრუქტურული მთლიანობის შესანარჩუნებლად."
+        },
+        heel: {
+          title: "/ ქუსლის რესტავრაციის სერვისი",
+          description: "ჩვენი ქუსლის რესტავრაციის სერვისი ფოკუსირებულია ქუსლზე ძირის დამაგრებაზე ზუსტად ორიგინალური დიზაინის მსგავსად. ეს სერვისი უზრუნველყოფს, რომ თქვენი ლუქსური ფეხსაცმელი ინარჩუნებს ესთეტიკურ მიმზიდველობას, ამავდროულად იღებს აუცილებელ შეკეთებას საუკეთესო მდგომარეობაში შესანარჩუნებლად."
+        },
+        benefits: {
+          title: "რატომ უნდა აირჩიოთ კასალის ძირები თქვენი ლუქსური ფეხსაცმლისთვის?",
+          colorMatch: {
+            title: "იდეალური ფერის შესაბამისობა",
+            description: "კასალის ძირების ერთ-ერთი გამორჩეული მახასიათებელია მათი ფერების ფართო ასორტიმენტი, რომელიც შექმნილია ლუქსური ფეხსაცმლის ორიგინალური ძირის ფერის შესაბამისად. განსხვავებით ბევრი ზოგადი ძირის დამცავისგან, კასალის ძირები სპეციალურად მზადდება დიზაინერული ფეხსაცმლის ბრენდებთან უნაკლოდ შესაბამისობისთვის. ფერების შესაბამისობის შესაძლებლობა უზრუნველყოფს, რომ თქვენი ლუქსური ფეხსაცმლის სილამაზე არა მხოლოდ არ დაირღვევა, არამედ გაუმჯობესდება კიდეც."
+          },
+          elegance: {
+            title: "ელეგანტურობა ფუნქციურობასთან ერთად",
+            description: "კასალის ძირები არა მხოლოდ დამცავი, არამედ ესთეტიკურად სასიამოვნოც არის. მათი დახვეწილი, სარკისებრი ან აბრეშუმისებრი ზედაპირი აუმჯობესებს ფეხსაცმლის გარეგნულ იერს და ამავდროულად უზრუნველყოფს უმაღლეს გამძლეობას. ამ ძირებით შეგიძლიათ ფეხსაცმელი უმწიკვლოდ შეინარჩუნოთ სტილის დაკარგვის გარეშე."
+          },
+          customization: {
+            title: "ინდივიდუალიზაცია და სიზუსტე",
+            description: "Hamptons & Soles-ში ჩვენ ვამაყობთ, რომ თითოეულ კასალის ძირს ვარგებთ თქვენს კონკრეტულ ფეხსაცმელს. ჩვენი ოსტატები უზრუნველყოფენ, რომ ფერი, ზომა და სტილი იდეალურად შეესაბამებოდეს თქვენს ფეხსაცმელს, რაც დამცავ ძირს თითქმის უხილავს ხდის და ამავდროულად მატებს დამატებით ცვეთისგან დაცვას."
+          },
+          highEnd: {
+            title: "იდეალური მაღალი კლასის ფეხსაცმლისთვის",
+            description: "კასალის ძირებს ენდობიან ლუქსური ფეხსაცმლის მფლობელები მთელ მსოფლიოში, რადგან ისინი შექმნილია წამყვანი დიზაინერული ბრენდების მაღალი სტანდარტების დასაკმაყოფილებლად. თუ გაქვთ Louboutins, Jimmy Choo, Chanel, Hermes ან Valentino-ს ფეხსაცმელი, კასალის ძირები ინარჩუნებს თქვენი ფეხსაცმლის ელეგანტურობას და ორიგინალურ ოსტატობას."
+          }
         }
       }
     }
