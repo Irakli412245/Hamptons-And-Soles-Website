@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 
 import Header from "../Header/Header.tsx";
 import Footer from "../Footer/Footer.tsx";
+import FloatingProductModal from "../Product/FloatingProductModal.tsx";
 
 import {getAllProducts} from "../../lib/api.ts";
 
@@ -29,6 +30,7 @@ const Layout = () => {
             <Header/>
             <Outlet/>
             <Footer/>
+            <FloatingProductModal />
         </div>
     );
 };
