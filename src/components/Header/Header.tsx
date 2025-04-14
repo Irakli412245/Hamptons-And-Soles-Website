@@ -76,19 +76,16 @@ const MobileMenu: React.FC<IMobileMenu> = ({onChangeLanguage}) => {
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
-            // Перевіряємо, що меню відкрите і клік був за межами меню
             if (isOpen && menuRef.current && !menuRef.current.contains(e.target as Node)) {
                 setIsOpen(false);
                 if (isOpenSubMenu) setIsOpenSubMenu(false);
             }
         };
 
-        // Додаємо обробник подій тільки якщо меню відкрите
         if (isOpen) {
             document.addEventListener('mousedown', handleClickOutside);
         }
 
-        // Прибираємо обробник при розмонтуванні або зміні стану
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
