@@ -18,12 +18,16 @@ const Layout = () => {
 
     useEffect(() => {
         AOS.init({
-            duration: 2000,
-            once: true,
-            easing: 'ease-in-out',
-            mirror: false,
+            duration: 2500,
+            once: false,
+            easing: 'ease-out-cubic',
+            mirror: true,
+            offset: 10,
+            delay: 50,
+            anchorPlacement: 'top-bottom',
+            disableMutationObserver: false
         })
-    }, [])
+    }, []);
 
     return (
         <div className=''>
