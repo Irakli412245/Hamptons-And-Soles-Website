@@ -63,7 +63,7 @@ interface IMobileMenu {
 const MobileMenu: React.FC<IMobileMenu> = ({onChangeLanguage}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenSubMenu, setIsOpenSubMenu] = useState(false);
-    const menuRef = useRef<HTMLDivElement>(null);
+    const menuRef = useRef<HTMLUListElement>(null);
 
     const toggleMenu = () => {
         setIsOpen(prev => !prev);
