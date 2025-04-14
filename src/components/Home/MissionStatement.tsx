@@ -1,49 +1,53 @@
 import Icon from "../UI/Icon.tsx";
 import Title from "../UI/Title.tsx";
-
-const links = [
-    {
-        title: 'delicate cleaning',
-        link: '/',
-        iconId: 'cleaning'
-    },
-    {
-        title: 'shoe restoration',
-        link: '/',
-        iconId: 'shoe'
-    },
-    {
-        title: 'bag restoration',
-        link: '/',
-        iconId: 'bag'
-    },
-    {
-        title: 'coat restoration',
-        link: '/',
-        iconId: 'coat'
-    },
-    {
-        title: 'protective soles',
-        link: '/',
-        iconId: 'soles'
-    },
-    {
-        title: 'Cobbler Repair',
-        link: '/',
-        iconId: 'Repair'
-    },
-]
+import { useTranslation } from 'react-i18next';
 
 const MissionStatement = () => {
+    const { t } = useTranslation();
+    
+    const links = [
+        {
+            title: t('home.missionStatement.delicateCleaning'),
+            link: '/',
+            iconId: 'cleaning'
+        },
+        {
+            title: t('home.missionStatement.shoeRestoration'),
+            link: '/',
+            iconId: 'shoe'
+        },
+        {
+            title: t('home.missionStatement.bagRestoration'),
+            link: '/',
+            iconId: 'bag'
+        },
+        {
+            title: t('home.missionStatement.coatRestoration'),
+            link: '/',
+            iconId: 'coat'
+        },
+        {
+            title: t('home.missionStatement.protectiveSoles'),
+            link: '/',
+            iconId: 'soles'
+        },
+        {
+            title: t('home.missionStatement.cobblerRepair'),
+            link: '/',
+            iconId: 'Repair'
+        },
+    ];
+
     return (
         <div data-aos='fade-up'>
             <section className="w-full flex flex-col items-center gap-[62px] py-[77px] table:py-[184px] mobile:px-10">
                 <Title type={'h2'} className={'max-w-[930px]'}>
-                    Our mission is to provide customers with professional, aesthetically-driven restoration and delicate
-                    cleaning of luxury shoes and handbags, paired with high-quality, comfortable service
+                    {t('home.missionStatement.title')}
                 </Title>
                 <div className={'flex flex-col gap-[58px]'}>
-                    <p className={'font-seasons font-normal text-[28px] text-center uppercase'}>Our services:</p>
+                    <p className={'font-seasons font-normal text-[28px] text-center uppercase'}>
+                        {t('home.missionStatement.services')}
+                    </p>
                     <ul className={'grid grid-cols-1 table:grid-cols-2 gap-x-[100px]'}>
                         {
                             links.map(el => (
@@ -54,7 +58,6 @@ const MissionStatement = () => {
                                 </li>
                             ))
                         }
-
                     </ul>
                 </div>
             </section>

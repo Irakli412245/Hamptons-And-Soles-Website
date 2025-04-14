@@ -1,38 +1,33 @@
 import Title from "../UI/Title.tsx";
+import { useTranslation } from 'react-i18next';
 
 const ContactSection = () => {
+    const { t } = useTranslation();
+    
     return (
         <div
             className={'flex flex-col justify-center items-center py-[70px] table:py-[207px] mobile:px-[56px] bg-secondary-bg'}>
             <div data-aos='fade-up'>
                 <Title type={'h2'} className={'mb-[70px]'}>
-                    Get in touch with us:
+                    {t('home.contactSection.title')}
                 </Title>
                 <ul className="grid grid-cols-1 table:grid-cols-2 gap-[60px] text-[14px] mb-[77px] justify-items-center">
                     <li className="flex flex-col gap-8 w-[300px]">
                         <p className="block px-4 uppercase text-center">
-                            Brothers Kakabadze 5,
-                            <br/>
-                            Tbilisi 0110, Georgia
+                            {t('home.contactSection.addressTbilisi')}
                         </p>
                         <span className="w-full h-[0.5px] bg-primary-cl"></span>
                         <p className="block px-4 uppercase text-center">
-                            Monday - Friday
-                            <br/>
-                            10:00 - 19:00
+                            {t('home.contactSection.hoursTbilisi')}
                         </p>
                     </li>
                     <li className="flex flex-col gap-8 w-[300px]">
                         <p className="uppercase text-center">
-                            Axis Towers shopping center,
-                            <br/>
-                            I.Chavchavadze Avenue 37m
+                            {t('home.contactSection.addressAxis')}
                         </p>
                         <span className="w-full h-[0.5px] bg-primary-cl"></span>
                         <p className="uppercase text-center">
-                            Monday - Sunday
-                            <br/>
-                            10:00 - 22:00
+                            {t('home.contactSection.hoursAxis')}
                         </p>
                     </li>
                 </ul>

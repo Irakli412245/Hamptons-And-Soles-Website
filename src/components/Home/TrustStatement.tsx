@@ -1,4 +1,5 @@
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next';
 
 import Title from "../UI/Title.tsx";
 import InfiniteGallery from "../UI/InfiniteGallery.tsx";
@@ -38,17 +39,17 @@ const galleryMobileImages = [
 ]
 
 const TrustStatement = () => {
+    const { t } = useTranslation();
     const {width} = useWindowDimensions();
 
     return (
         <section className="w-full bg-secondary-bg py-[80px] table:py-[176px]">
             <div data-aos='fade-up' className={'flex flex-col gap-12 items-center mb-[80px] table:mb-[180px] mobile:px-10'}>
                 <Title type={'h2'} className={'max-w-[853px]'}>
-                    Since 2017, we've had the honor of restoring and caring for over 7,000 of your beloved items
-                    from finest luxury brands. Thank you for your continued trust in our service.
+                    {t('home.trustStatement.title')}
                 </Title>
                 <span className={'block w-[207px] table:w-[310px] desktop:w-[414px] h-[0.5px] bg-primary-cl'}></span>
-                <p className="text-center text-sm max-w-lg">{brands.join(' | ')} | AND MORE</p>
+                <p className="text-center text-sm max-w-lg">{brands.join(' | ')} | {t('home.trustStatement.andMore')}</p>
             </div>
             {
                 width > 426 ? (
