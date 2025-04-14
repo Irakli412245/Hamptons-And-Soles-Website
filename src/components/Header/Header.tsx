@@ -1,53 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io";
 import {motion} from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import Icon from "../UI/Icon.tsx";
 import Button from "../UI/Button.tsx";
 import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
-
-// Navigation data
-const NAVIGATION_DATA = {
-    mobile: [
-        {link: '/', title: 'Home'},
-        {link: '/about', title: 'About us'},
-        {
-            link: '/',
-            title: 'Services',
-            links: [
-                {link: '/delicate-cleaning', title: 'delicate cleaning'},
-                {link: '/shoes-restoration', title: 'shoes restoration'},
-                {link: '/bag-restoration', title: 'bag restoration'},
-                {link: '/casali-sole-protectors', title: 'Casali Sole Protectors'},
-                {link: '/jacket-restoration', title: 'Jacket Restoration'},
-            ]
-        },
-        {link: '/products', title: 'Products'},
-        {link: '/contacts', title: 'Contacts'},
-        {link: '/', title: 'en|ge'}
-    ],
-    
-    left: [
-        {link: '/', title: 'Home'},
-        {link: '/about', title: 'About us'},
-        {
-            link: '/services',
-            title: 'Services',
-            sub: [
-                {link: '/delicate-cleaning', title: 'delicate cleaning'},
-                {link: '/shoes-restoration', title: 'shoes restoration'},
-                {link: '/bag-restoration', title: 'bag restoration'},
-                {link: '/casali-sole-protectors', title: 'Casali Sole Protectors'},
-                {link: '/jacket-restoration', title: 'Jacket Restoration'},
-            ]
-        },
-    ],
-    
-    right: [
-        {link: '/products', title: 'Products'},
-        {link: '/contacts', title: 'Contacts'},
-    ]
-};
+import { useLanguage } from '../../lib/LanguageContext.tsx';
 
 // Animation settings
 const ANIMATION_SETTINGS = {
@@ -61,9 +20,33 @@ interface IMobileMenu {
 }
 
 const MobileMenu: React.FC<IMobileMenu> = ({onChangeLanguage}) => {
+    const { t } = useTranslation();
+    const { language } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenSubMenu, setIsOpenSubMenu] = useState(false);
     const menuRef = useRef<HTMLUListElement>(null);
+
+    // Navigation data with translations
+    const navigationData = {
+        mobile: [
+            {link: '/', title: t('header.home')},
+            {link: '/about', title: t('header.aboutUs')},
+            {
+                link: '/',
+                title: t('header.services'),
+                links: [
+                    {link: '/delicate-cleaning', title: t('header.delicateCleaning')},
+                    {link: '/shoes-restoration', title: t('header.shoesRestoration')},
+                    {link: '/bag-restoration', title: t('header.bagRestoration')},
+                    {link: '/casali-sole-protectors', title: t('header.casaliSoleProtectors')},
+                    {link: '/jacket-restoration', title: t('header.jacketRestoration')},
+                ]
+            },
+            {link: '/products', title: t('header.products')},
+            {link: '/contacts', title: t('header.contacts')},
+            {link: '/', title: language === 'en' ? 'EN|GE' : 'GE|EN'}
+        ]
+    };
 
     const toggleMenu = () => {
         setIsOpen(prev => !prev);
@@ -122,7 +105,7 @@ const MobileMenu: React.FC<IMobileMenu> = ({onChangeLanguage}) => {
                 transition={{duration: ANIMATION_SETTINGS.duration, ease: ANIMATION_SETTINGS.ease}}
                 className="absolute top-[72px] left-0 z-40 w-full bg-primary-bg overflow-hidden pb-6 px-4"
             >
-                {NAVIGATION_DATA.mobile.map(el => (
+                {navigationData.mobile.map(el => (
                     <li key={el.title}>
                         {el.links ? (
                             <Button type={'button'} className={''} onClick={toggleSubMenu}>
@@ -134,7 +117,7 @@ const MobileMenu: React.FC<IMobileMenu> = ({onChangeLanguage}) => {
                                 type={'link'} 
                                 className={''} 
                                 link={el.link} 
-                                onClick={el.title.toLowerCase() === 'en|ge' ? onChangeLanguage : toggleMenu}
+                                onClick={el.title.includes('|') ? onChangeLanguage : toggleMenu}
                             >
                                 <p className={'uppercase text-[12px]'}>
                                     {el.title}
@@ -204,11 +187,37 @@ const DesktopSubmenu: React.FC<IDesktopSubmenu> = ({items, isOpen, onClose}) => 
 
 // Main Header component
 const Header = () => {
+    const { t } = useTranslation();
+    const { language, changeLanguage } = useLanguage();
     const [isOpenSubMenu, setIsOpenSubMenu] = useState(false);
     const {width} = useWindowDimensions();
 
+    // Navigation data with translations
+    const navigationData = {
+        left: [
+            {link: '/', title: t('header.home')},
+            {link: '/about', title: t('header.aboutUs')},
+            {
+                link: '/services',
+                title: t('header.services'),
+                sub: [
+                    {link: '/delicate-cleaning', title: t('header.delicateCleaning')},
+                    {link: '/shoes-restoration', title: t('header.shoesRestoration')},
+                    {link: '/bag-restoration', title: t('header.bagRestoration')},
+                    {link: '/casali-sole-protectors', title: t('header.casaliSoleProtectors')},
+                    {link: '/jacket-restoration', title: t('header.jacketRestoration')},
+                ]
+            },
+        ],
+        
+        right: [
+            {link: '/products', title: t('header.products')},
+            {link: '/contacts', title: t('header.contacts')},
+        ]
+    };
+
     const handleChangeLanguage = () => {
-        console.log('change language');
+        changeLanguage(language === 'en' ? 'ge' : 'en');
     };
 
     const toggleSubMenu = () => {
@@ -224,7 +233,7 @@ const Header = () => {
     return (
         <div className={'flex items-center justify-between py-7 px-4 desktop:px-10'}>
             <ul className={'flex gap-2 desktop:gap-[42px]'}>
-                {NAVIGATION_DATA.left.map(el => (
+                {navigationData.left.map(el => (
                     <li key={el.title} className={'relative'}>
                         {el.sub ? (
                             <Button
@@ -259,7 +268,7 @@ const Header = () => {
             
             <div className={'flex items-center gap-2 desktop:gap-[42px]'}>
                 <ul className={'flex gap-2 desktop:gap-[42px]'}>
-                    {NAVIGATION_DATA.right.map(el => (
+                    {navigationData.right.map(el => (
                         <li key={el.title}>
                             <Button type={'link'} link={el.link} className={'uppercase text-[14px]'}>
                                 {el.title}
@@ -267,7 +276,9 @@ const Header = () => {
                         </li>
                     ))}
                 </ul>
-                <Button type={'button'} className={'text-[14px]'} onClick={handleChangeLanguage}>EN|GE</Button>
+                <Button type={'button'} className={'text-[14px]'} onClick={handleChangeLanguage}>
+                    {language === 'en' ? 'EN|GE' : 'GE|EN'}
+                </Button>
             </div>
         </div>
     );

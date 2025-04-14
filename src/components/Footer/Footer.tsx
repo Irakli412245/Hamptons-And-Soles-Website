@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 import {IoIosArrowUp} from "react-icons/io";
+import { useTranslation } from 'react-i18next';
 
 import Icon from "../UI/Icon.tsx";
 import Button from "../UI/Button.tsx";
@@ -7,6 +8,7 @@ import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
 
 
 const MobileFooterContent = () => {
+    const { t } = useTranslation();
     const footerRef = useRef<HTMLDivElement | null>(null);
     const [showScrollButton, setShowScrollButton] = useState(false);
 
@@ -62,7 +64,7 @@ const MobileFooterContent = () => {
                 </li>
             </ul>
             <p className={"text-[12px] text-center"}>
-                Hamptons & Soles © 2024 All rights reserved.
+                {t('footer.copyright')}
             </p>
 
             {showScrollButton && (
@@ -78,22 +80,23 @@ const MobileFooterContent = () => {
 };
 
 const Footer = () => {
-    const {width} = useWindowDimensions()
+    const { t } = useTranslation();
+    const {width} = useWindowDimensions();
 
     const leftNav = [
         {
             link: '/',
-            title: 'Facebook'
+            title: t('footer.facebook')
         },
         {
             link: '/',
-            title: 'Instagram'
+            title: t('footer.instagram')
         },
         {
             link: '/',
-            title: 'Tiktok'
+            title: t('footer.tiktok')
         },
-    ]
+    ];
 
     if (width < 1024) {
         return <MobileFooterContent/>
@@ -118,9 +121,7 @@ const Footer = () => {
             </div>
             <div className={'flex items-center justify-end gap-[6px] pr-8'}>
                 <p className={'text-[10px]'}>
-                    Hamptons & Soles
-                    <br/>
-                    © 2024 All rights reserved.
+                    {t('footer.copyright')}
                 </p>
             </div>
         </div>
