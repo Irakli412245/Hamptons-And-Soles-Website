@@ -22,7 +22,7 @@ const Hero = memo(() => {
             <div className={'flex flex-col justify-center items-center gap-6'}>
                 <h2 className={'font-seasons font-normal text-[40px] table:text-[64px] leading-[150%] uppercase text-center'}>
                     {t('bag.heroTitle.firstLine')}
-                    {isMobile && <br/>}
+                    <br/>
                     {t('bag.heroTitle.secondLine')}
                 </h2>
                 <span className={'block w-[100px] table:w-[140px] h-[0.5px] bg-primary-cl'}></span>
