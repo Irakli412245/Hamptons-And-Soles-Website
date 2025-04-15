@@ -44,10 +44,18 @@ const LuxuryShoesBenefits = memo(() => {
                 {t('casali.benefits.title')}
             </CardTitle>
             <div className={'grid grid-cols-1 table:grid-cols-2 gap-8'}>
-                <MobileCard className={''} title={t('casali.benefits.colorMatch.title')} description={t('casali.benefits.colorMatch.description')} order={1} />
-                <MobileCard className={''} title={t('casali.benefits.elegance.title')} description={t('casali.benefits.elegance.description')} order={2} />
-                <MobileCard className={''} title={t('casali.benefits.customization.title')} description={t('casali.benefits.customization.description')} order={3} />
-                <MobileCard className={''} title={t('casali.benefits.highEnd.title')} description={t('casali.benefits.highEnd.description')} order={4} />
+                <div data-aos='fade-up' data-aos-delay='100'>
+                    <MobileCard className={''} title={t('casali.benefits.colorMatch.title')} description={t('casali.benefits.colorMatch.description')} order={1} />
+                </div>
+                <div data-aos='fade-up' data-aos-delay='200'>
+                    <MobileCard className={''} title={t('casali.benefits.elegance.title')} description={t('casali.benefits.elegance.description')} order={2} />
+                </div>
+                <div data-aos='fade-up' data-aos-delay='300'>
+                    <MobileCard className={''} title={t('casali.benefits.customization.title')} description={t('casali.benefits.customization.description')} order={3} />
+                </div>
+                <div data-aos='fade-up' data-aos-delay='400'>
+                    <MobileCard className={''} title={t('casali.benefits.highEnd.title')} description={t('casali.benefits.highEnd.description')} order={4} />
+                </div>
             </div>
         </Card>
     );

@@ -22,7 +22,7 @@ const CasaliSoleProtectors = () => {
                 <ImageContainer imageUrl={isMobile ? bgImageMobile2 : bgImage2}/>
             </div>
             <LuxuryShoesBenefits/>
-            <div className={'pt-7 pb-[60px] table:pb-0'}>
+            <div className={'pt-7 pb-0'}>
                 <ImageContainer imageUrl={isMobile ? bgImageMobile3 : bgImage3}/>
             </div>
         </div>
