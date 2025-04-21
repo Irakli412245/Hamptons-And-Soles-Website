@@ -1,13 +1,16 @@
 import {supabase} from "./supabaseClient.ts";
+import {IProduct} from "../components/Product/ProductList/ProductList.tsx";
 
-export const getAllProducts = async () => {
-    const {data, error} = await supabase
+export const getAllProducts = async (): Promise<IProduct[]> => {
+    const { data, error } = await supabase
         .from('products')
         .select('*');
 
     if (error) {
         console.error('Error fetching products:', error);
-    } else {
-        console.log('Products:', data);
+        return [];
     }
-}
+
+    console.log('Products with details and info:', data);
+    return data;
+};

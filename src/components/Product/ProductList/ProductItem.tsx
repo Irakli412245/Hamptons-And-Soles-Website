@@ -29,13 +29,12 @@ const ProductItem: React.FC<IProps> = ({product}) => {
 
     return (
         <div className={'relative border-[0.5px] border-primary-cl'} onClick={handleProductClick}>
-            <p className={'absolute top-10 left-5 -rotate-45 font-light text-[12px] leading-[110%] uppercase'}>Demo</p>
-            <img alt={product.title} src={product.imageUrl}/>
+            <img alt={product.productName} src={product.imageUrl}/>
             <div className={'flex min-h-10 border-t-[0.5px] border-primary-cl'}>
                 <p
                     className={'flex-1 p-2.5 font-light text-[9px] leading-[110%] table:font-medium table:text-[14px] table:leading-[130%] table:uppercase'}
                 >
-                    {product.title}
+                    {product.productName}
                 </p>
                 <button
                     className={'flex justify-center items-center p-2.5 border-l-[0.5px] border-primary-cl'}
