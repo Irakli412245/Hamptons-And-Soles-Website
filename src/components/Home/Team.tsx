@@ -12,12 +12,12 @@ const Team = () => {
     return (
         <Card
             type="images"
-            className="bg-[linear-gradient(to_bottom,_#000000_0%,_#000000_50%,_#330000_50%,_#330000_100%)] py-10 overflow-hidden"
+            className="bg-[linear-gradient(to_bottom,_#000000_0%,_#000000_50%,_#330000_50%,_#330000_100%)] overflow-hidden"
         >
             <div className="w-full max-w-7xl mx-auto">
                 {/* First row - moving right */}
                 <div className="flex mb-5 overflow-hidden">
-                    <div className="flex gap-5 animate-infinite-scroll-right">
+                    <div className="flex gap-2 animate-infinite-scroll-right">
                         {[...images, ...images].map((src, index) => (
                             <div key={`right-${index}`} className="w-[283px] h-[200px] flex-shrink-0">
                                 <Image 
@@ -32,7 +32,7 @@ const Team = () => {
 
                 {/* Second row - moving left */}
                 <div className="flex overflow-hidden">
-                    <div className="flex gap-5 animate-infinite-scroll-left">
+                    <div className="flex gap-2 animate-infinite-scroll-left">
                         {[...images, ...images].map((src, index) => (
                             <div key={`left-${index}`} className="w-[283px] h-[200px] flex-shrink-0">
                                 <Image 

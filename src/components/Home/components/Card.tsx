@@ -10,7 +10,7 @@ const Card: React.FC<IProps> = ({children, className, type}) => {
 
     if (type === 'images') {
         return (
-            <div className={`flex flex-1 flex-col items-center justify-center px-7 table:px-20 desktop:px-32 ${className}`}>
+            <div className={`flex flex-1 flex-col items-center justify-center py-10 table:py-36 ${className}`}>
                 {children}
             </div>
         );
