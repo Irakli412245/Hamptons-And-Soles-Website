@@ -26,6 +26,20 @@ export default {
         table: '768px',
         desktop: '1440px',
       },
+      keyframes: {
+        'scroll-right': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }
+        },
+        'scroll-left': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' }
+        }
+      },
+      animation: {
+        'infinite-scroll-right': 'scroll-right 60s linear infinite',
+        'infinite-scroll-left': 'scroll-left 60s linear infinite'
+      }
     },
   },
   plugins: [],

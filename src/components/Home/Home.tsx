@@ -1,21 +1,14 @@
-import CompanyLogo from "./CompanyLogo.tsx";
+import Hero from "./Hero.tsx";
 import TrustStatement from "./TrustStatement.tsx";
-import MissionStatement from "./MissionStatement.tsx";
-import ReviewsSection from "./ReviewsSection.tsx";
-import HeroImage from "./HeroImage.tsx";
-import ContactSection from "./ContactSection.tsx";
-
+import Team from "./Team.tsx";
 
 const Home = () => {
     return (
-        <>
-            <CompanyLogo/>
+        <div className={'flex flex-1 flex-col'}>
+            <Hero/>
             <TrustStatement/>
-            <MissionStatement/>
-            <ReviewsSection/>
-            <HeroImage/>
-            <ContactSection/>
-        </>
+            <Team/>
+        </div>
     );
 };
 

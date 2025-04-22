@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import ProductItem from "./ProductItem.tsx";
-import {useWindowDimensions} from "../../../hooks/useWindowDimensions.tsx";
+// import {useWindowDimensions} from "../../../hooks/useWindowDimensions.tsx";
 import {useQuery} from "@tanstack/react-query";
 
 import {getAllProducts} from "../../../lib/api.ts";
@@ -20,8 +20,8 @@ interface IProps {
 }
 
 const ProductList: React.FC<IProps> = ({ selectedCategory, onCategoryChange }) => {
-    const {width} = useWindowDimensions();
-    const isMobile = width < 768;
+    // const {width} = useWindowDimensions();
+    // const isMobile = width < 768;
 
     const { data: products, error, isLoading } = useQuery<IProduct[]>({
         queryKey: ['products'],
