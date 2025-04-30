@@ -1,12 +1,12 @@
 import React from "react";
 
-interface Iprops {
+interface IProps {
     children: React.ReactNode;
     className?: string;
     type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 }
 
-const CardTitle: React.FC<Iprops> = ({children, className, type}) => {
+const CardTitle: React.FC<IProps> = ({children, className, type}) => {
 
     switch (type) {
         case 'h1':
@@ -47,7 +47,7 @@ const CardTitle: React.FC<Iprops> = ({children, className, type}) => {
             )
         case 'p':
             return (
-                <p className={`text-base ${className}`}>
+                <p className={`font-light text-[14px] leading-[150%] ${className}`}>
                     {children}
                 </p>
             )

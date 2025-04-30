@@ -5,7 +5,6 @@ import 'aos/dist/aos.css';
 
 import Header from "../Header/Header.tsx";
 import Footer from "../Footer/Footer.tsx";
-import FloatingProductModal from "../Product/FloatingProductModal.tsx";
 
 const Layout = () => {
     useEffect(() => {
@@ -26,7 +25,6 @@ const Layout = () => {
             <Header/>
             <Outlet/>
             <Footer/>
-            <FloatingProductModal />
         </div>
     );
 };

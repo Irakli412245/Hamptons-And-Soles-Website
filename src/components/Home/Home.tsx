@@ -1,6 +1,10 @@
 import Hero from "./Hero.tsx";
-import TrustStatement from "./TrustStatement.tsx";
 import Team from "./Team.tsx";
+import TrustStatement from "./TrustStatement.tsx";
+import Mission from "./Mission.tsx";
+import Reviews from "./Reviews.tsx";
+import ThankYouMessage from "./ThankYouMessage.tsx";
+import Contacts from "./Contacts.tsx";
 
 const Home = () => {
     return (
@@ -8,6 +12,10 @@ const Home = () => {
             <Hero/>
             <TrustStatement/>
             <Team/>
+            <Mission/>
+            <Reviews/>
+            <ThankYouMessage/>
+            <Contacts/>
         </div>
     );
 };

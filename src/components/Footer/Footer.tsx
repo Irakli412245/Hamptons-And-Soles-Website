@@ -1,49 +1,14 @@
-import {useEffect, useRef, useState} from "react";
-import {IoIosArrowUp} from "react-icons/io";
 import { useTranslation } from 'react-i18next';
 
 import Icon from "../UI/Icon.tsx";
 import Button from "../UI/Button.tsx";
 import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
 
-
 const MobileFooterContent = () => {
     const { t } = useTranslation();
-    const footerRef = useRef<HTMLDivElement | null>(null);
-    const [showScrollButton, setShowScrollButton] = useState(false);
-
-    const handleTabScrollUp = () => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-        });
-    };
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setShowScrollButton(entry.isIntersecting);
-            },
-            {
-                threshold: 0.1,
-            }
-        );
-
-        if (footerRef.current) {
-            observer.observe(footerRef.current);
-        }
-
-        return () => {
-            if (footerRef.current) {
-                observer.unobserve(footerRef.current);
-            }
-        };
-    }, []);
 
     return (
         <div
-            ref={footerRef}
             className={"relative flex flex-col items-center justify-center gap-4 py-9"}
         >
             <ul className={"flex justify-center gap-1"}>
@@ -66,15 +31,6 @@ const MobileFooterContent = () => {
             <p className={"text-[12px] text-center"}>
                 {t('footer.copyright')}
             </p>
-
-            {showScrollButton && (
-                <button
-                    onClick={handleTabScrollUp}
-                    className="absolute top-6 right-6 z-50 flex justify-center items-center gap-2 rounded-full bg-black p-2 shadow-lg transition hover:scale-105"
-                >
-                    <IoIosArrowUp size={20}/>
-                </button>
-            )}
         </div>
     );
 };

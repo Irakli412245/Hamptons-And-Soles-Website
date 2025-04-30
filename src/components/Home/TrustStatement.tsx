@@ -4,7 +4,7 @@ import CardTitle from "./components/CardTitle.tsx";
 const TrustStatement = () => {
     return (
         <Card type={'content'} className={'gap-10 table:gap-12 pt-20 table:pt-72 bg-secondary-bg'}>
-            <CardTitle type={'h2'} className={'max-w-[316px]'}>
+            <CardTitle type={'h2'} className={'max-w-[316px] table:max-w-[800px]'}>
                 Since 2017, we've had the honor of restoring for over 20,000 of your beloved items from finest luxury brands
             </CardTitle>
             <div className={'w-[200px] h-[0.5px] bg-primary-cl'}></div>

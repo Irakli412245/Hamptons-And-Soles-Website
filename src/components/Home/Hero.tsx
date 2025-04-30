@@ -1,11 +1,10 @@
 import {useEffect, useState} from "react";
 
-import heroBgMobile from '../../../public/images/home/hero/home-hero-mobile.png';
-import heroBgDesktop from '../../../public/images/home/hero/home-hero.png';
+import Icon from "../UI/Icon.tsx";
 
 import {useWindowDimensions} from "../../hooks/useWindowDimensions.tsx";
 
-import Icon from "../UI/Icon.tsx";
+import heroImage from '../../../public/images/home/hero/hero.png'
 
 const Hero = () => {
     const {width} = useWindowDimensions()
@@ -21,9 +20,9 @@ const Hero = () => {
 
     return (
         <div
-            className="flex justify-center items-center w-full h-[600px] table:h-[810px] bg-cover bg-center bg-no-repeat"
+            className="flex justify-center items-center w-full h-[700px] table:h-[810px] bg-cover bg-center bg-no-repeat"
             style={{
-                backgroundImage: `url(${width <= 425 ? heroBgMobile:  heroBgDesktop})`
+                backgroundImage: `url(${heroImage})`
             }}
         >
             <div className="relative z-10 flex flex-col items-center justify-center h-full">
