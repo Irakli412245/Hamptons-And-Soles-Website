@@ -1,1 +1,0 @@
-export {default as CasaliSoleProtectors} from './CasaliSoleProtectors.tsx';

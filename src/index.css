@@ -3,78 +3,103 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-        font-family: 'Montserrat';
-        src: url('/assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/src/assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: 'Montserrat';
-        src: url('/fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
-        font-weight: 300;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/src/assets/fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: 'Montserrat';
-        src: url('/fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
-        font-weight: 500;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/src/assets/fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: 'Montserrat';
-        src: url('/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
-        font-weight: 700;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/src/assets/fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: 'The Seasons';
-        src: url('/fonts/The.Seasons/The.Seasons/The Seasons Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: 'The Seasons';
+    src: url('/src/assets/fonts/The.Seasons/The.Seasons/The Seasons Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: 'The Seasons';
-        src: url('/fonts/The.Seasons/The.Seasons/The Seasons Light.ttf') format('truetype');
-        font-weight: 300;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: 'The Seasons';
+    src: url('/src/assets/fonts/The.Seasons/The.Seasons/The Seasons Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
 
-    @font-face {
-        font-family: 'The Seasons';
-        src: url('/fonts/The.Seasons/The.Seasons/The Seasons Bold.ttf') format('truetype');
-        font-weight: 700;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: 'The Seasons';
+    src: url('/src/assets/fonts/The.Seasons/The.Seasons/The Seasons Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
 
-    :root {
-        --text-color: #ffcc99;
-        --bg-color: #330000;
-        --second-bg-color: #000000;
+  :root {
+    --text-color: #ffcc99;
+    --bg-color: #330000;
+    --second-bg-color: #000000;
 
-        --font-primary: 'Montserrat', sans-serif;
-        --font-secondary: 'The Seasons', serif;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'The Seasons', serif;
 
-        --base-font-size: 16px;
-        --base-line-height: 1.5;
-    }
+    --base-font-size: 16px;
+    --base-line-height: 1.5;
+  }
 
-    html {
-        font-family: var(--font-primary);
-        font-size: var(--base-font-size);
-        line-height: var(--base-line-height);
-        font-weight: 300;
-        letter-spacing: 0.1rem;
-        color: var(--text-color);
-        background-color: var(--bg-color);
-    }
+  html {
+    font-family: var(--font-primary), sans-serif;
+    font-size: var(--base-font-size);
+    line-height: var(--base-line-height);
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+  }
 
-    body {
-        /*@apply min-h-screen flex flex-col items-center justify-center;*/
-    }
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  button {
+    padding: 10px;
+    transition: all 3s ease;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+  button:hover {
+    opacity: 0.5;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 3s ease;
+    position: relative;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
 }

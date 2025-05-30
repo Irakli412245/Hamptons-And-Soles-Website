@@ -23,7 +23,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const savedLanguage = localStorage.getItem('i18nextLng') as Language || 'en';
+  const savedLanguage = (localStorage.getItem('i18nextLng') as Language) || 'en';
   const [language, setLanguage] = useState<Language>(savedLanguage.substring(0, 2) as Language);
 
   const changeLanguage = (lang: Language) => {
@@ -38,7 +38,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     };
 
     i18n.on('languageChanged', handleLanguageChange);
-    
+
     return () => {
       i18n.off('languageChanged', handleLanguageChange);
     };
@@ -51,4 +51,4 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   );
 };
 
-export default LanguageContext; 
+export default LanguageContext;
