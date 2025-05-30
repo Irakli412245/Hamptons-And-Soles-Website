@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import sprite from '../../assets/images/sprite.svg';
+import sprite from '/images/sprite.svg';
 
 interface IProps {
   id: string;
