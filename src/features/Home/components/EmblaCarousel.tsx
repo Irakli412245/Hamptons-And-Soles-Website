@@ -12,15 +12,15 @@ interface IProps {
 const EmblaCarousel: React.FC<IProps> = ({ sliders, direction, imageW, imageH }) => {
   const [emblaRef] = useEmblaCarousel(
     {
-      align: 'end',
+      align: 'start',
       loop: true,
-      duration: 1000,
+      dragFree: true,
       direction,
-      watchSlides: false,
+      duration: 20000,
     },
     [
       Autoplay({
-        delay: 2000,
+        delay: 10, 
         stopOnInteraction: false,
         stopOnMouseEnter: false,
       }),
@@ -31,9 +31,14 @@ const EmblaCarousel: React.FC<IProps> = ({ sliders, direction, imageW, imageH })
     <section className="embla" dir={direction}>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {sliders.map((index) => (
-            <div className="embla__slide" key={index}>
-              <img alt={'team'} src={index} className={`block w-[${imageW}px] h-[${imageH}px]`} />
+          {sliders.map((src, idx) => (
+            <div className="embla__slide" key={idx}>
+              <img
+                alt={'team'}
+                src={src}
+                className="block"
+                style={{ width: imageW, height: imageH }}
+              />
             </div>
           ))}
         </div>
