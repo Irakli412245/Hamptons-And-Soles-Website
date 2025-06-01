@@ -4,7 +4,7 @@ import Team from './Team.tsx';
 import MissionStatement from './MissionStatement.tsx';
 import Review from './Review.tsx';
 import ThanksMessage from './ThanksMessage.tsx';
-import VisitInfo from './components/VisitInfo.tsx';
+import VisitInfo from './VisitInfo.tsx';
 
 const HomePage = () => {
   return (

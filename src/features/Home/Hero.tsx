@@ -11,7 +11,7 @@ const Hero = () => {
         'bg-[url(/images/home/hero/hero-mob.png)] ' +
         'table:bg-[url(/images/home/hero/hero.png)] ' +
         'w-full h-[700px] table:h-[810px] bg-cover bg-center bg-no-repeat ' +
-        'flex justify-center items-center'
+        'flex flex-col justify-center items-center'
       }
     >
       <Icon

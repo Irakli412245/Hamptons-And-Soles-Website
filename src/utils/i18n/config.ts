@@ -4,13 +4,17 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import headerEN from './translations/en/header.json';
 import headerGE from './translations/ge/header.json';
+import homeEN from './translations/en/home.json';
+import homeGE from './translations/ge/home.json';
 
 const resources = {
   en: {
     header: headerEN,
+    home: homeEN,
   },
   ge: {
     header: headerGE,
+    home: homeGE,
   },
 };
 

@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "Welcome to Hamptons & Soles",
+    "subtitle": "Luxury Restoration & Care"
+  },
+  "experience": {
+    "title": "Since 2017, we've had the honor of restoring for over 20,000 of your beloved items from finest luxury brands",
+    "brands": "Gucci | Balenciaga | Chanel | Dior | Louis Vuitton | Fendi | Saint Laurent | Prada | Hermès | and more"
+  },
+  "mission": {
+    "title": "Our mission is to provide customers with professional, aesthetically-driven restoration and zero risk hand-cleaning of luxury items, paired with comfortable service",
+    "text": "our services:",
+    "services": {
+      "shoe_restoration": "shoe restoration",
+      "bag_restoration": "bag restoration",
+      "delicate_hand_cleaning": "delicate hand-cleaning",
+      "protective_soles": "protective soles",
+      "cobbler_repair": "Cobbler Repair",
+      "golden_goose": "Golden Goose Sole Repair Service"
+    }
+  },
+  "team": {
+    "title": "Meet Our Team"
+  },
+  "review": {
+    "title": "Reviews"
+  },
+  "thanks": {
+    "message": "Seeing your tags inspires us! Thank you for your trust!"
+  },
+  "visit": {
+    "title": "Visit us",
+    "address1": "5 Brothers Kakabadze Street, Tbilisi, Georgia",
+    "hours1": "Mon–Fri: 10:00 – 19:00",
+    "hours2": "Sat–Sun: 11:00 – 18:00",
+    "phone1": "Phone: +995 522 22 45 50",
+    "address2": "Axis Towers Shopping Ctr., 37M Ilia Chavchavadze Avenue, Tbilisi, Georgia",
+    "hours3": "Mon–Sun: 10:00 – 22:00",
+    "phone2": "Phone: +995 555 17 48 48",
+    "delivery": "Pickup & Delivery Service available city-wide",
+    "email": "Info@hamptons.ge"
+  }
+} 

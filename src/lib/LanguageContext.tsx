@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface LanguageContextType {
@@ -22,6 +22,15 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const { i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+
+  useEffect(() => {
+    const handleLanguageChanged = (lng: string) => setCurrentLanguage(lng);
+    i18n.on('languageChanged', handleLanguageChanged);
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, [i18n]);
 
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
@@ -30,7 +39,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   return (
     <LanguageContext.Provider
       value={{
-        currentLanguage: i18n.language,
+        currentLanguage,
         changeLanguage,
       }}
     >

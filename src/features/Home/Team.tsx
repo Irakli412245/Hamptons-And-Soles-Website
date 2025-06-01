@@ -1,6 +1,7 @@
 import EmblaCarousel from './components/EmblaCarousel.tsx';
 import Card from './components/Card.tsx';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.tsx';
+import { useTranslation } from 'react-i18next';
 
 const teamPhotos = [
   '/images/home/team/team-1.png',
@@ -13,7 +14,8 @@ const teamPhotos = [
   '/images/home/team/team-8.png',
 ];
 
-export default function Team() {
+const Team = () => {
+  const { t } = useTranslation('home');
   const { width } = useWindowDimensions();
   const isMobile = width < 768;
 
@@ -35,6 +37,9 @@ export default function Team() {
         'flex flex-col gap-5 bg-[linear-gradient(to_bottom,_#000000_70%,_#330000_30%)] table:bg-[linear-gradient(to_bottom,_#000000_100%,_#330000_0%)]'
       }
     >
+      <h2 className="font-seasons text-[24px] table:text-[36px] text-[#fc9] mb-8 uppercase text-center">
+        {t('team.title')}
+      </h2>
       {isMobile ? (
         <>
           <EmblaCarousel sliders={topImages} direction={'rtl'} imageW={300} imageH={200} />
@@ -45,4 +50,6 @@ export default function Team() {
       )}
     </Card>
   );
-}
+};
+
+export default Team;

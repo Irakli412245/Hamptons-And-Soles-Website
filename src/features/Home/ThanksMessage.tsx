@@ -1,11 +1,13 @@
 import Card from './components/Card.tsx';
 import Text from './components/Text.tsx';
+import { useTranslation } from 'react-i18next';
 
 const ThanksMessage = () => {
+  const { t } = useTranslation('home');
   return (
     <Card type={'image'} className={'gap-20 table:gap-[70px] bg-secondary-bg table:!pt-0'}>
       <Text className={'max-w-[233px] table:max-w-[314px]'}>
-        Seeing your tags inspires us! Thank you for your trust!
+        {t('thanks.message')}
       </Text>
       <div
         className={

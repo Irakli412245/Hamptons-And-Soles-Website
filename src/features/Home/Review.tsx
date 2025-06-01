@@ -1,6 +1,7 @@
 import Card from './components/Card.tsx';
 import Title from './components/Title.tsx';
 import EmblaCarousel from './components/EmblaCarousel.tsx';
+import { useTranslation } from 'react-i18next';
 
 const reviewImages = [
   '/images/home/reviews/review-1.png',
@@ -17,6 +18,7 @@ const reviewImages = [
 ];
 
 const Review = () => {
+  const { t } = useTranslation('home');
   return (
     <Card
       type={'image'}
@@ -26,7 +28,7 @@ const Review = () => {
     >
       <div className={'flex items-center w-full gap-6'}>
         <span className={'block w-full h-[0.5px] bg-primary-cl'}></span>
-        <Title className={''}>Reviews</Title>
+        <Title className={''}>{t('review.title')}</Title>
         <span className={'block w-full h-[0.5px] bg-primary-cl'}></span>
       </div>
       <EmblaCarousel sliders={reviewImages} direction={'ltr'} imageW={206} imageH={364} />
