@@ -1,74 +1,80 @@
-export const links = [
+export interface ILink {
+  label: string;
+  link: string;
+  subLinks?: ILink[];
+}
+
+export const links: ILink[] = [
   {
     link: '/',
-    label: 'Home',
+    label: 'navigation.home',
   },
   {
     link: 'about_us',
-    label: 'About us',
+    label: 'navigation.about',
   },
   {
     link: 'gallery',
-    label: 'Gallery',
+    label: 'navigation.gallery',
   },
   {
     link: 'services',
-    label: 'Services',
+    label: 'navigation.services',
     subLinks: [
       {
         link: 'shoe_restoration_warranty',
-        label: 'Shoe restoration warranty',
+        label: 'navigation.services_submenu.shoe_restoration_warranty',
       },
       {
         link: 'shoe_restoration',
-        label: 'Shoe restoration',
+        label: 'navigation.services_submenu.shoe_restoration',
       },
       {
         link: 'bag_restoration',
-        label: 'Bag restoration',
+        label: 'navigation.services_submenu.bag_restoration',
       },
       {
         link: 'casali_sole_protectors',
-        label: 'Casali sole protectors',
+        label: 'navigation.services_submenu.casali_sole_protectors',
       },
       {
         link: 'golden_goose_sole_repair_service',
-        label: 'Golden Goose Sole Repair Service',
+        label: 'navigation.services_submenu.golden_goose_sole_repair_service',
       },
       {
         link: 'jacket_restoration',
-        label: 'Jacket Restoration',
+        label: 'navigation.services_submenu.jacket_restoration',
       },
       {
         link: 'delicate_hand_cleaning',
-        label: 'delicate hand-cleaning',
+        label: 'navigation.services_submenu.delicate_hand_cleaning',
       },
     ],
   },
   {
     link: 'products',
-    label: 'Products',
+    label: 'navigation.products',
     subLinks: [
       {
         link: 'all_products',
-        label: 'All products',
+        label: 'navigation.products_submenu.all_products',
       },
       {
         link: 'suede_care',
-        label: 'Suede Care',
+        label: 'navigation.products_submenu.suede_care',
       },
       {
         link: 'leather_care',
-        label: 'Leather Care',
+        label: 'navigation.products_submenu.leather_care',
       },
       {
         link: 'brushes_and_accessories',
-        label: 'Brushes and Accessories',
+        label: 'navigation.products_submenu.brushes_and_accessories',
       },
     ],
   },
   {
     link: 'contacts',
-    label: 'Contacts',
+    label: 'navigation.contact',
   },
 ];

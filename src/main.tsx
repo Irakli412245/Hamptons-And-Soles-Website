@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import './index.css';
-import './lib/i18n';
+import './utils/i18n/config';
 
 import { LanguageProvider } from './lib/LanguageContext.tsx';
 import { router } from './routes/AppRouter.tsx';

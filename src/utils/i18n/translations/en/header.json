@@ -1,0 +1,34 @@
+{
+  "menu": "Menu",
+  "language": {
+    "en": "en",
+    "ge": "ge",
+    "separator": "|"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About us",
+    "gallery": "Gallery",
+    "services": "Services",
+    "services_submenu": {
+      "shoe_restoration_warranty": "Shoe restoration warranty",
+      "shoe_restoration": "Shoe restoration",
+      "bag_restoration": "Bag restoration",
+      "casali_sole_protectors": "Casali sole protectors",
+      "golden_goose_sole_repair_service": "Golden Goose Sole Repair Service",
+      "jacket_restoration": "Jacket Restoration",
+      "delicate_hand_cleaning": "Delicate hand-cleaning"
+    },
+    "products": "Products",
+    "products_submenu": {
+      "all_products": "All products",
+      "suede_care": "Suede Care",
+      "leather_care": "Leather Care",
+      "brushes_and_accessories": "Brushes and Accessories"
+    },
+    "contact": "Contacts"
+  },
+  "footer": {
+    "rights": "ALL RIGHTS RESERVED"
+  }
+} 

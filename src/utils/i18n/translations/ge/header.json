@@ -1,0 +1,34 @@
+{
+  "menu": "მენიუ",
+  "language": {
+    "en": "ინგ",
+    "ge": "ქარ",
+    "separator": "|"
+  },
+  "navigation": {
+    "home": "მთავარი",
+    "about": "ჩვენს შესახებ",
+    "gallery": "გალერეა",
+    "services": "სერვისები",
+    "services_submenu": {
+      "shoe_restoration_warranty": "ფეხსაცმლის რესტავრაციის გარანტია",
+      "shoe_restoration": "ფეხსაცმლის რესტავრაცია",
+      "bag_restoration": "ჩანთის რესტავრაცია",
+      "casali_sole_protectors": "Casali ძირის დამცავები",
+      "golden_goose_sole_repair_service": "Golden Goose ძირის შეკეთების სერვისი",
+      "jacket_restoration": "ქურთუკის რესტავრაცია",
+      "delicate_hand_cleaning": "მგრძნობიარე ხელით გაწმენდა"
+    },
+    "products": "პროდუქცია",
+    "products_submenu": {
+      "all_products": "ყველა პროდუქტი",
+      "suede_care": "ზემეტის მოვლა",
+      "leather_care": "ტყავის მოვლა",
+      "brushes_and_accessories": "ტუჩები და აქსესუარები"
+    },
+    "contact": "კონტაქტი"
+  },
+  "footer": {
+    "rights": "ყველა უფლება დაცულია"
+  }
+} 

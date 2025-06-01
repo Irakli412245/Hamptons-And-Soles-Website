@@ -1,18 +1,16 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import i18n from './i18n';
-
-type Language = 'en' | 'ge';
+import React, { createContext, useContext, ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface LanguageContextType {
-  language: Language;
-  changeLanguage: (lang: Language) => void;
+  currentLanguage: string;
+  changeLanguage: (lang: string) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
@@ -23,32 +21,20 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const savedLanguage = (localStorage.getItem('i18nextLng') as Language) || 'en';
-  const [language, setLanguage] = useState<Language>(savedLanguage.substring(0, 2) as Language);
+  const { i18n } = useTranslation();
 
-  const changeLanguage = (lang: Language) => {
+  const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
-    setLanguage(lang);
   };
 
-  useEffect(() => {
-    const handleLanguageChange = () => {
-      const currentLang = i18n.language.substring(0, 2) as Language;
-      setLanguage(currentLang);
-    };
-
-    i18n.on('languageChanged', handleLanguageChange);
-
-    return () => {
-      i18n.off('languageChanged', handleLanguageChange);
-    };
-  }, []);
-
   return (
-    <LanguageContext.Provider value={{ language, changeLanguage }}>
+    <LanguageContext.Provider
+      value={{
+        currentLanguage: i18n.language,
+        changeLanguage,
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );
-};
-
-export default LanguageContext;
+}; 
