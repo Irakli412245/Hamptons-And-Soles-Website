@@ -18,7 +18,12 @@ const Footer = () => {
           <ul className={'flex gap-3'}>
             {socialLinks.map((el, index) => (
               <li key={index}>
-                <a href={el.link} className={'flex p-2.5 rounded-full bg-primary-cl'}>
+                <a
+                  href={el.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={'flex p-2.5 rounded-full bg-primary-cl'}
+                >
                   <Icon id={el.label} width={20} height={20} color={'#330000'} />
                 </a>
               </li>
@@ -37,7 +42,12 @@ const Footer = () => {
           <ul className={'flex gap-3'}>
             {socialLinks.map((el, index) => (
               <li key={index}>
-                <a href={el.link} className={'flex p-2.5 rounded-full bg-primary-cl'}>
+                <a
+                  href={el.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={'flex p-2.5 rounded-full bg-primary-cl'}
+                >
                   <Icon id={el.label} width={20} height={20} color={'#330000'} />
                 </a>
               </li>
