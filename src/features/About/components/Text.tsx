@@ -7,7 +7,7 @@ interface IProps {
 
 const Text: React.FC<IProps> = ({ children, className }) => {
   return (
-    <p className={`font-light text-[14px] leading-[150%] tracking-[0.1em] ${className}`}>
+    <p className={`flex font-light text-[14px] leading-[150%] tracking-[0.1em] ${className}`}>
       {children}
     </p>
   );
