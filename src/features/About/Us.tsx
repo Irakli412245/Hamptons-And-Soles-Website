@@ -5,12 +5,12 @@ import Text from './components/Text.tsx';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.tsx';
 
 const images = [
-  'public/images/about/us/about_us_team_1.png',
-  'public/images/about/us/about_us_team_2.png',
-  'public/images/about/us/about_us_team_3.png',
-  'public/images/about/us/about_us_team_4.png',
-  'public/images/about/us/about_us_team_5.png',
-  'public/images/about/us/about_us_team_6.png',
+  '/images/about/us/about_us_team_1.png',
+  '/images/about/us/about_us_team_2.png',
+  '/images/about/us/about_us_team_3.png',
+  '/images/about/us/about_us_team_4.png',
+  '/images/about/us/about_us_team_5.png',
+  '/images/about/us/about_us_team_6.png',
 ];
 
 const Us = () => {
